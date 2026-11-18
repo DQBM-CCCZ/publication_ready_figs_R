@@ -28,49 +28,49 @@ No prior experience with ggplot2 is required, but basic R programming skills are
 
 ## Learning Objectives
 
-### Block 1 — Visualization Principles
+### Module 1 — Visualization Principles
 
 - **Analyze the principles of effective data visualization:**
   - **Explain** the importance of clarity, accuracy, and aesthetics in creating publication-ready figures
   - **Identify** common pitfalls in data visualization and how to avoid them
   - **Apply** best practices for visual communication in science
 
-### Block 2 — Base R Graphics
+### Module 2 — Base R Graphics
 
 - **Apply base R graphics for figure creation:**
   - **Create** basic plots (e.g., scatterplots, bar charts, histograms) using `plot()`, `barplot()`, `hist()`
   - **Customize** plots with titles, labels, legends, and color schemes
   - **Understand** when to use base R vs. ggplot2
 
-### Block 3 — ggplot2 Fundamentals
+### Module 3 — ggplot2 Fundamentals
 
 - **Construct advanced visualizations using ggplot2:**
   - **Build** complex and layered visualizations using the grammar of graphics
   - **Apply** `geoms`, `aesthetics`, and `scales` to create polished figures
   - **Create** reproducible and reusable plotting code
 
-### Block 4 — Styling & Themes
+### Module 4 — Styling & Themes
 
 - **Master figure styling and visual design:**
   - **Apply** themes, color palettes, and annotations effectively
   - **Customize** legends, axis labels, and overall visual hierarchy
   - **Create** consistent styling across multiple plots
 
-### Block 5 — Publication Standards
+### Module 5 — Publication Standards
 
 - **Adapt figures for publication requirements:**
   - **Adjust** figure dimensions, resolutions, and formats (PDF, PNG, TIFF)
   - **Export** publication-quality figures with correct DPI and dimensions
   - **Meet** specific journal technical requirements
 
-### Block 6 — Multi-panel Figures
+### Module 6 — Multi-panel Figures
 
 - **Assemble complex multi-panel figures:**
   - **Combine** multiple plots using `patchwork`
   - **Design** effective layouts with proper alignment
   - **Create** figures with shared legends and consistent styling
 
-### Block 7 — Advanced Topics
+### Module 7 — Advanced Topics
 
 - **Implement advanced visualization techniques:**
   - **Add** statistical summaries and confidence intervals
@@ -84,33 +84,33 @@ Here's how everything fits together:
 
 ```{mermaid}
 graph TD
-    A["🎓 Start: Welcome"] --> B["Block 1: Visualization Principles"]
+    A["🎓 Start: Welcome"] --> B["Module 1: Visualization Principles"]
     
     B --> E1["📝 Exercise 1"]
     
-    E1 --> C["Block 2: Base R Graphics"]
+    E1 --> C["Module 2: Base R Graphics"]
     
     C --> E2["📝 Exercise 2"]
     
-    E2 --> D["Block 3: ggplot2 Fundamentals"]
+    E2 --> D["Module 3: ggplot2 Fundamentals"]
     
     D --> E3["📝 Exercise 3"]
     
-    E3 --> E["Block 4: Styling & Themes"]
+    E3 --> E["Module 4: Styling & Themes"]
     
     E --> E4["📝 Exercise 4"]
     
     E4 --> DAY1["✅ Half-Day 1 Complete"]
     
-    DAY1 --> F["Block 5: Publication Standards"]
+    DAY1 --> F["Module 5: Publication Standards"]
     
     F --> E5["📝 Exercise 5"]
     
-    E5 --> G["Block 6: Multi-panel Figures"]
+    E5 --> G["Module 6: Multi-panel Figures"]
     
     G --> E6["📝 Exercise 6"]
     
-    E6 --> H["Block 7: Advanced Topics"]
+    E6 --> H["Module 7: Advanced Topics"]
     
     H --> E7["📝 Exercise 7"]
     
@@ -137,22 +137,12 @@ To reach these objectives we combine concept explanations, live demonstrations, 
 
 Each block has practical work. All answers to the exercises are provided, but try the exercise first by yourself before checking solutions.
 
-## Course Format
-
-| | |
-|---|---|
-| **Format** | 2 half-day intensive workshop |
-| **Duration** | 4 hours per half-day (8 hours total) |
-| **Timing** | Each day: 13:00–17:00 |
-| **Audience** | Researchers with basic R skills |
-| **Prerequisites** | See [Pre-course Setup](qmd/precourse_preparation.qmd) |
-
 ## Quick Links
 
 - 📖 **[Pre-course Setup](qmd/precourse_preparation.qmd)** – Installation and skill assessment
 - 📅 **[Schedule](qmd/schedule.qmd)** – Detailed course schedule
 - 🎓 **[Slides](#)** – View all presentation slides
-- 📝 **[Exercises](#)** – Access exercises for each block
+- 📝 **[Exercises](#)** – Access exercises for each module
 
 ## License
 

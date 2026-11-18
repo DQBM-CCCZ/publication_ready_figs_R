@@ -24,35 +24,35 @@ website:
       - text: Slides
         menu:
           - href: slides/slide_block_1.qmd
-            text: "Block 1: Visualization Principles"
+            text: "Module 1: Visualization Principles"
           - href: slides/slide_block_2.qmd
-            text: "Block 2: Base R Graphics"
+            text: "Module 2: Base R Graphics"
           - href: slides/slide_block_3.qmd
-            text: "Block 3: ggplot2 Fundamentals"
+            text: "Module 3: ggplot2 Fundamentals"
           - href: slides/slide_block_4.qmd
-            text: "Block 4: Styling & Themes"
+            text: "Module 4: Styling & Themes"
           - href: slides/slide_block_5.qmd
-            text: "Block 5: Publication Standards"
+            text: "Module 5: Publication Standards"
           - href: slides/slide_block_6.qmd
-            text: "Block 6: Multi-panel Figures"
+            text: "Module 6: Multi-panel Figures"
           - href: slides/slide_block_7.qmd
-            text: "Block 7: Advanced Topics"
+            text: "Module 7: Advanced Topics"
       - text: Exercises
         menu:
           - href: exercises/exercise_block_1.qmd
-            text: "Block 1"
+            text: "Module 1"
           - href: exercises/exercise_block_2.qmd
-            text: "Block 2"
+            text: "Module 2"
           - href: exercises/exercise_block_3.qmd
-            text: "Block 3"
+            text: "Module 3"
           - href: exercises/exercise_block_4.qmd
-            text: "Block 4"
+            text: "Module 4"
           - href: exercises/exercise_block_5.qmd
-            text: "Block 5"
+            text: "Module 5"
           - href: exercises/exercise_block_6.qmd
-            text: "Block 6"
+            text: "Module 6"
           - href: exercises/exercise_block_7.qmd
-            text: "Block 7"
+            text: "Module 7"
     right:
       - icon: github
         href: https://github.com/DQBM-CCCZ/publication_ready_figs_R
@@ -69,4 +69,3 @@ format:
     css: styles.css
     toc: true
     highlight-style: monokai
-
