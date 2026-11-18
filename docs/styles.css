@@ -18,12 +18,12 @@
 
 /* Navbar */
 .navbar {
-  background-color: var(--git-orange) !important;
+  background-color: var(--git-orange);
 }
 
 .navbar-container,
 .navbar-brand-container {
-  background-color: var(--git-orange) !important;
+  background-color: var(--git-orange);
 }
 
 .navbar-nav .nav-link, .navbar-brand {
