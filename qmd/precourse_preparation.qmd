@@ -124,19 +124,22 @@ RStudio is the integrated development environment (IDE) you'll use for this cour
 
 ### Linux (Ubuntu/Debian)
 
-Download and install directly:
-
-```bash
-cd ~/Downloads
-wget https://download1.rstudio.org/rstudio-2024.12.0-369-amd64.deb
-sudo dpkg -i rstudio-2024.12.0-369-amd64.deb
-```
-
-Or install via your package manager:
+**Using your package manager (recommended — always gets latest):**
 
 ```bash
 sudo apt install -y rstudio
 ```
+
+**Or download the latest version directly:**
+
+1. Go to [RStudio Download](https://posit.co/download/rstudio-desktop/)
+2. Choose **Linux** and your distribution
+3. Download the `.deb` file
+4. Install:
+   ```bash
+   sudo dpkg -i rstudio-*.deb
+   sudo apt install -f  # Fix any missing dependencies
+   ```
 
 Launch RStudio:
 
