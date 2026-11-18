@@ -3,11 +3,156 @@ title: "Publication-Ready Figure Generation in R"
 format: html
 ---
 
-Welcome to the course website for Publication-Ready Figure Generation in R.
+Welcome to the course website for **Publication-Ready Figure Generation in R**.
+
+## Acknowledgements
+
+| | |
+|---|---|
+| ![](assets/images/krauthammer.jpg){width="150px"} | ![](assets/images/cccz.jpg){width="350px"} |
+| We thank [Prof. Michael Krauthammer](https://krauthammerlab.ch/authors/michaelkrauthammer/) for supporting this course. | Special thanks to **CCCZ** — Dr. Maja Zenz and Ms. Silke Uflacker — for providing coffee breaks. |
 
 ## Teacher & Author
 
-Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989" target="_blank"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>
+Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989" target="_blank"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a><br>
+Bioinformatics Specialist and Trainer<br>
+Swiss Institute of Bioinformatics (SIB) / University of Zurich (UZH) / University Hospital Zurich (USZ) / Comprehensive Cancer Center Zurich (CCCZ)<br>
+[deepak.tanwar@uzh.ch](mailto:deepak.tanwar@uzh.ch)<br>
+[Bluesky](http://dktanwar.bsky.social/)
+
+## About This Course
+
+This is a hands-on 2 half-day workshop (13:00–17:00 each day) for researchers who want to create publication-ready figures in R. By the end of the course you will understand visualization principles, master both base R and ggplot2 graphics, and produce high-quality figures ready for journal submission.
+
+No prior experience with ggplot2 is required, but basic R programming skills are essential. See [Pre-course Setup](qmd/precourse_preparation.qmd) for prerequisites.
+
+## Learning Objectives
+
+### Block 1 — Visualization Principles
+
+- **Analyze the principles of effective data visualization:**
+  - **Explain** the importance of clarity, accuracy, and aesthetics in creating publication-ready figures
+  - **Identify** common pitfalls in data visualization and how to avoid them
+  - **Apply** best practices for visual communication in science
+
+### Block 2 — Base R Graphics
+
+- **Apply base R graphics for figure creation:**
+  - **Create** basic plots (e.g., scatterplots, bar charts, histograms) using `plot()`, `barplot()`, `hist()`
+  - **Customize** plots with titles, labels, legends, and color schemes
+  - **Understand** when to use base R vs. ggplot2
+
+### Block 3 — ggplot2 Fundamentals
+
+- **Construct advanced visualizations using ggplot2:**
+  - **Build** complex and layered visualizations using the grammar of graphics
+  - **Apply** `geoms`, `aesthetics`, and `scales` to create polished figures
+  - **Create** reproducible and reusable plotting code
+
+### Block 4 — Styling & Themes
+
+- **Master figure styling and visual design:**
+  - **Apply** themes, color palettes, and annotations effectively
+  - **Customize** legends, axis labels, and overall visual hierarchy
+  - **Create** consistent styling across multiple plots
+
+### Block 5 — Publication Standards
+
+- **Adapt figures for publication requirements:**
+  - **Adjust** figure dimensions, resolutions, and formats (PDF, PNG, TIFF)
+  - **Export** publication-quality figures with correct DPI and dimensions
+  - **Meet** specific journal technical requirements
+
+### Block 6 — Multi-panel Figures
+
+- **Assemble complex multi-panel figures:**
+  - **Combine** multiple plots using `patchwork`
+  - **Design** effective layouts with proper alignment
+  - **Create** figures with shared legends and consistent styling
+
+### Block 7 — Advanced Topics
+
+- **Implement advanced visualization techniques:**
+  - **Add** statistical summaries and confidence intervals
+  - **Apply** faceting for multi-faceted data display
+  - **Annotate** plots with p-values and statistical information
+  - **Produce** high-quality, reproducible figures from start to finish
+
+## Course Roadmap
+
+Here's how everything fits together:
+
+```{mermaid}
+graph TD
+    A["🎓 Start: Welcome"] --> B["Block 1: Visualization Principles"]
+    
+    B --> E1["📝 Exercise 1"]
+    
+    E1 --> C["Block 2: Base R Graphics"]
+    
+    C --> E2["📝 Exercise 2"]
+    
+    E2 --> D["Block 3: ggplot2 Fundamentals"]
+    
+    D --> E3["📝 Exercise 3"]
+    
+    E3 --> E["Block 4: Styling & Themes"]
+    
+    E --> E4["📝 Exercise 4"]
+    
+    E4 --> DAY1["✅ Half-Day 1 Complete"]
+    
+    DAY1 --> F["Block 5: Publication Standards"]
+    
+    F --> E5["📝 Exercise 5"]
+    
+    E5 --> G["Block 6: Multi-panel Figures"]
+    
+    G --> E6["📝 Exercise 6"]
+    
+    E6 --> H["Block 7: Advanced Topics"]
+    
+    H --> E7["📝 Exercise 7"]
+    
+    E7 --> I["🏁 Final Project"]
+    
+    I --> J["✅ Course Complete"]
+    
+    style A fill:#e1f5ff
+    style B fill:#f3e5f5
+    style C fill:#e8f5e9
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style DAY1 fill:#e0f2f1
+    style F fill:#f3e5f5
+    style G fill:#e8f5e9
+    style H fill:#fff3e0
+    style I fill:#f1f8e9
+    style J fill:#c8e6c9
+```
+
+## Learning Experiences
+
+To reach these objectives we combine concept explanations, live demonstrations, and hands-on exercises. During exercises you are welcome to discuss with other participants. All exercise steps include expected output so you can check your progress.
+
+Each block has practical work. All answers to the exercises are provided, but try the exercise first by yourself before checking solutions.
+
+## Course Format
+
+| | |
+|---|---|
+| **Format** | 2 half-day intensive workshop |
+| **Duration** | 4 hours per half-day (8 hours total) |
+| **Timing** | Each day: 13:00–17:00 |
+| **Audience** | Researchers with basic R skills |
+| **Prerequisites** | See [Pre-course Setup](qmd/precourse_preparation.qmd) |
+
+## Quick Links
+
+- 📖 **[Pre-course Setup](qmd/precourse_preparation.qmd)** – Installation and skill assessment
+- 📅 **[Schedule](qmd/schedule.qmd)** – Detailed course schedule
+- 🎓 **[Slides](#)** – View all presentation slides
+- 📝 **[Exercises](#)** – Access exercises for each block
 
 ## License
 
@@ -16,55 +161,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## Copyright
 
 Copyright 2025, Deepak Tanwar
-
-## Learning Objectives
-
-### Block 1: Introduction to Data Visualization
-
-- **Analyze the principles of effective data visualization:**
-  - **Explain** the importance of clarity, accuracy, and aesthetics in creating publication-ready figures.
-  - **Identify** common pitfalls in data visualization and how to avoid them.
-- **Apply base R graphics for figure creation:**
-  - **Create** basic plots (e.g., scatterplots, bar charts) using base R functions.
-  - **Customize** plots with titles, labels, and legends.
-
-### Block 2 & 3: Mastering `ggplot2`
-
-- **Construct advanced visualizations using ggplot2:**
-  - **Build** complex and layered visualizations using the `ggplot2` package.
-  - **Develop** and **apply** custom themes for consistent styling across multiple plots.
-
-### Block 4: Statistical Annotations
-
-- **Integrate statistical annotations and summaries:**
-  - **Add** statistical summaries (e.g., regression lines, confidence intervals) to figures.
-  - **Annotate** plots with p-values and correlation coefficients.
-
-### Block 5: Composition of Figures and Tables
-
-- **Assemble complex figures from multiple components:**
-  - **Construct** and **style** publication-ready tables using the `gt` package.
-  - **Combine** multiple `ggplot2` plots, and `gt` tables, into a single, cohesive layout using `patchwork`.
-
-### Block 6: Complex Heatmaps and Cross-System Plot Composition
-
-- **Create and combine figures from different graphics systems:**
-  - **Construct** complex, annotated heatmaps using the `ComplexHeatmap` package.
-  - **Combine** plots from different systems (e.g., `ComplexHeatmap` and `ggplot2`) into a cohesive figure using `grid` graphics.
-
-### Block 7: Finalizing Figures & Reproducibility
-
-- **Produce and export publication-quality figures:**
-  - **Adapt** stylistic elements like fonts and line weights to meet publication guidelines.
-  - **Generate** high-resolution figures in various formats (PDF, PNG, TIFF) using functions like `ggsave()`.
-- **Implement best practices for reproducibility:**
-  - **Write** clean and reusable R scripts for figure generation.
-  - **Document** code and workflows to ensure reproducibility and transparency.
-
-## Learning experiences
-
-To reach the learning outcomes we will use lectures, exercises, and polls. During exercises, you are free to discuss with other participants. During lectures, focus on the lecture only.
-
-### Exercises
-
-Each block has practical work involved. Some more than others. The practicals are subdivided into chapters, and we’ll have a (short) discussion after each chapter. All answers to the practicals are incorporated, but they are hidden. Do the exercise first by yourself, before checking out the answer. If your answer is different from the answer in the practicals, try to figure out why they are different.
