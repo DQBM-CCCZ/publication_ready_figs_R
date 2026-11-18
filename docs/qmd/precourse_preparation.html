@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pre-course Preparation – Publication-Ready Figure Generation in R</title>
+<title>Pre-course Setup – Publication-Ready Figure Generation in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -362,15 +397,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a>
+  <li><a href="#prerequisites-skill-assessment" id="toc-prerequisites-skill-assessment" class="nav-link active" data-scroll-target="#prerequisites-skill-assessment">1. Prerequisites &amp; Skill Assessment</a>
   <ul class="collapse">
-  <li><a href="#basic-r-programming-skills" id="toc-basic-r-programming-skills" class="nav-link" data-scroll-target="#basic-r-programming-skills">Basic R Programming Skills</a></li>
-  <li><a href="#skill-self-assessment" id="toc-skill-self-assessment" class="nav-link" data-scroll-target="#skill-self-assessment">Skill Self-Assessment</a></li>
+  <li><a href="#basic-r-programming-skills-required" id="toc-basic-r-programming-skills-required" class="nav-link" data-scroll-target="#basic-r-programming-skills-required">Basic R Programming Skills Required</a></li>
+  <li><a href="#assess-your-skills" id="toc-assess-your-skills" class="nav-link" data-scroll-target="#assess-your-skills">Assess Your Skills</a></li>
   </ul></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <li><a href="#install-r-version-4.6.2" id="toc-install-r-version-4.6.2" class="nav-link" data-scroll-target="#install-r-version-4.6.2">2. Install R (Version 4.6.2)</a></li>
+  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">3. Install RStudio</a></li>
+  <li><a href="#install-required-r-packages" id="toc-install-required-r-packages" class="nav-link" data-scroll-target="#install-required-r-packages">4. Install Required R Packages</a></li>
+  <li><a href="#set-up-the-course-repository" id="toc-set-up-the-course-repository" class="nav-link" data-scroll-target="#set-up-the-course-repository">5. Set Up the Course Repository</a>
   <ul class="collapse">
-  <li><a href="#computational-requirements" id="toc-computational-requirements" class="nav-link" data-scroll-target="#computational-requirements">Computational Requirements</a></li>
+  <li><a href="#step-1-clone-the-repository" id="toc-step-1-clone-the-repository" class="nav-link" data-scroll-target="#step-1-clone-the-repository">Step 1 — Clone the repository</a></li>
+  <li><a href="#step-2-restore-the-r-environment-with-renv" id="toc-step-2-restore-the-r-environment-with-renv" class="nav-link" data-scroll-target="#step-2-restore-the-r-environment-with-renv">Step 2 — Restore the R environment with renv</a></li>
   </ul></li>
+  <li><a href="#test-everything" id="toc-test-everything" class="nav-link" data-scroll-target="#test-everything">6. Test Everything</a></li>
+  <li><a href="#pre-course-activity-optional" id="toc-pre-course-activity-optional" class="nav-link" data-scroll-target="#pre-course-activity-optional">7. Pre-course Activity (Optional)</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#r-or-rstudio-wont-install" id="toc-r-or-rstudio-wont-install" class="nav-link" data-scroll-target="#r-or-rstudio-wont-install">R or RStudio won’t install?</a></li>
+  <li><a href="#git-is-not-recognized" id="toc-git-is-not-recognized" class="nav-link" data-scroll-target="#git-is-not-recognized">Git is not recognized?</a></li>
+  <li><a href="#renvrestore-fails" id="toc-renvrestore-fails" class="nav-link" data-scroll-target="#renvrestore-fails">renv::restore() fails?</a></li>
+  <li><a href="#cannot-find-r-error-in-rstudio" id="toc-cannot-find-r-error-in-rstudio" class="nav-link" data-scroll-target="#cannot-find-r-error-in-rstudio">“Cannot find R” error in RStudio?</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
   </ul>
 </nav>
     </div>
@@ -380,7 +429,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pre-course Preparation</h1>
+<h1 class="title">Pre-course Setup</h1>
 </div>
 
 
@@ -397,40 +446,273 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<section id="basic-r-programming-skills" class="level3">
-<h3 class="anchored" data-anchor-id="basic-r-programming-skills">Basic R Programming Skills</h3>
+<p>Complete these steps <strong>before the course day</strong>. It will take about 30–45 minutes.</p>
+<hr>
+<section id="prerequisites-skill-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites-skill-assessment">1. Prerequisites &amp; Skill Assessment</h2>
+<section id="basic-r-programming-skills-required" class="level3">
+<h3 class="anchored" data-anchor-id="basic-r-programming-skills-required">Basic R Programming Skills Required</h3>
+<p>You should be comfortable with:</p>
 <ul>
-<li>Understanding R syntax (objects, functions, operators).</li>
-<li>Ability to create and manipulate basic data structures: vectors, factors, data frames, and lists.</li>
-<li>Familiarity with indexing and subsetting data.</li>
-<li>Writing simple scripts in RStudio or another R IDE.</li>
-<li>Reading and importing data (<code>read.csv()</code>, <code>read.table()</code>, or <code>readr</code>).</li>
+<li>R syntax (objects, functions, operators)</li>
+<li>Basic data structures: vectors, factors, data frames, and lists</li>
+<li>Indexing and subsetting data</li>
+<li>Writing simple R scripts</li>
+<li>Reading and importing data (<code>read.csv()</code>, <code>read.table()</code>, or <code>readr</code>)</li>
 </ul>
 </section>
-<section id="skill-self-assessment" class="level3">
-<h3 class="anchored" data-anchor-id="skill-self-assessment">Skill Self-Assessment</h3>
-<p>You can evaluate your skills here:</p>
+<section id="assess-your-skills" class="level3">
+<h3 class="anchored" data-anchor-id="assess-your-skills">Assess Your Skills</h3>
+<p>If you’re unsure, evaluate your R knowledge with one of these:</p>
 <ul>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform">Google Form</a></li>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform">Google Form Assessment</a></li>
 <li><a href="https://www.coursera.org/resources/r-programming-skill-assessment">Coursera R Programming Skill Assessment</a></li>
 <li><a href="https://nceas.github.io/oss-lessons/r-review-and-assessment/r-review-and-assessment.html">NCEAS R Review and Assessment</a></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Still unsure?</strong> Email <a href="mailto:deepak.tanwar@uzh.ch">deepak.tanwar@uzh.ch</a> before the course to discuss whether this workshop is a good fit.</p>
+</div>
+</div>
+<hr>
 </section>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<section id="computational-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="computational-requirements">Computational Requirements</h3>
+<section id="install-r-version-4.6.2" class="level2">
+<h2 class="anchored" data-anchor-id="install-r-version-4.6.2">2. Install R (Version 4.6.2)</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux (Ubuntu/Debian)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>Using Homebrew (recommended):</strong></p>
+<ol type="1">
+<li><p>If you don’t have Homebrew installed, install it first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Install R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install r</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<p><strong>Or download directly:</strong></p>
+<ol type="1">
+<li>Go to <a href="https://cran.r-project.org/bin/macosx/">CRAN - R for macOS</a></li>
+<li>Download <strong>R-4.6.2-arm64.pkg</strong> (Apple Silicon) or <strong>R-4.6.2-x86_64.pkg</strong> (Intel)</li>
+<li>Open the <code>.pkg</code> file and follow the installer</li>
+</ol>
+<p><strong>Verify installation:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Go to <a href="https://cran.r-project.org/bin/windows/base/">CRAN - R for Windows</a></li>
+<li>Click <strong>Download R 4.6.2 for Windows</strong></li>
+<li>Open the <code>.exe</code> file and follow the installer</li>
+<li>Use all default options</li>
+</ol>
+<p><strong>Verify installation:</strong></p>
+<p>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>R -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Add the CRAN repository and install:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> dirmngr gnupg apt-transport-https ca-certificates software-properties-common</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="st">"deb https://cloud.r-project.org/bin/linux/ubuntu </span><span class="va">$(</span><span class="ex">lsb_release</span> <span class="at">-cs</span><span class="va">)</span><span class="st">-cran40/"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-key adv <span class="at">--keyserver</span> keyserver.ubuntu.com <span class="at">--recv-keys</span> E298A3A825C0D65DFD57CBB651716619E084DAB9</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> r-base r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Verify installation:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="install-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="install-rstudio">3. Install RStudio</h2>
+<p>RStudio is the integrated development environment (IDE) you’ll use for this course.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Linux (Ubuntu/Debian)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/">RStudio Download</a></li>
+<li>Click <strong>Download for macOS</strong></li>
+<li>Open the <code>.dmg</code> file</li>
+<li>Drag RStudio into the <strong>Applications</strong> folder</li>
+<li>Launch RStudio from Applications</li>
+</ol>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ol type="1">
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/">RStudio Download</a></li>
+<li>Click <strong>Download for Windows</strong></li>
+<li>Open the <code>.exe</code> file</li>
+<li>Follow the installer with default options</li>
+<li>Launch RStudio from the Start menu</li>
+</ol>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>Download and install directly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download1.rstudio.org/rstudio-2024.12.0-369-amd64.deb</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> rstudio-2024.12.0-369-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or install via your package manager:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> rstudio</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Launch RStudio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>Verify installation:</strong></p>
+<p>Open RStudio. In the <strong>Console</strong> (bottom left), run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>R.version<span class="sc">$</span>version.string</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see version 4.6.2 or later.</p>
+<hr>
+</section>
+<section id="install-required-r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="install-required-r-packages">4. Install Required R Packages</h2>
+<p>Open RStudio and run this in the <strong>Console</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"patchwork"</span>, <span class="st">"tidyverse"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(packages)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will take 5–10 minutes. Watch for any errors.</p>
+<p><strong>Verify installations:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If all three load without errors, you’re ready!</p>
+<hr>
+</section>
+<section id="set-up-the-course-repository" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-the-course-repository">5. Set Up the Course Repository</h2>
+<p>We’ll use <strong>renv</strong> for reproducibility. This keeps your R environment isolated and consistent.</p>
+<section id="step-1-clone-the-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-clone-the-repository">Step 1 — Clone the repository</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">macOS / Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Open <strong>Terminal</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> publication_ready_figs_R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="pp">%</span><span class="va">USERPROFILE</span><span class="pp">%</span>\Documents</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>git clone https:/<span class="at">/github</span>.com<span class="at">/DQBM-CCCZ/publication_ready_figs_R</span>.git</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> publication_ready_figs_R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-restore-the-r-environment-with-renv" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-restore-the-r-environment-with-renv">Step 2 — Restore the R environment with renv</h3>
+<p>In RStudio:</p>
+<ol type="1">
+<li>Open the project: <strong>File → Open Project… → publication_ready_figs_R.Rproj</strong></li>
+<li>In the <strong>Console</strong>, run:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.</p>
+<p><strong>Expected output:</strong></p>
+<pre><code>✓ All done!
+# [1] "All done!"</code></pre>
+<hr>
+</section>
+</section>
+<section id="test-everything" class="level2">
+<h2 class="anchored" data-anchor-id="test-everything">6. Test Everything</h2>
+<p>Before the course day, run all these checks:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">macOS / Linux (Terminal)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows (Command Prompt)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">RStudio Console (all platforms)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check R version</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check git</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Launch RStudio</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a># Check R version</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>R -<span class="at">-version</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a># Check git</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a># Launch RStudio</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">start</span> rstudio</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check key packages</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check renv</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>All checks should pass with no errors.</strong></p>
+<hr>
+</section>
+<section id="pre-course-activity-optional" class="level2">
+<h2 class="anchored" data-anchor-id="pre-course-activity-optional">7. Pre-course Activity (Optional)</h2>
+<p>Warm up your R skills:</p>
 <ul>
-<li>R 4.5.1</li>
-<li>RStudio (latest version)</li>
-<li><code>renv</code> R package installed: <a href="https://rstudio.github.io/renv/articles/renv.html">renv documentation</a></li>
+<li>Watch <a href="https://www.youtube.com/playlist?list=PLIhLvue17Sd7wQQhUci0OWMGnCvoNvR50">R Basics Playlist</a> (20 minutes)</li>
+<li>Read <a href="https://r4ds.had.co.nz/introduction.html">R for Data Science - Chapter 1</a></li>
+<li>Try this interactive tutorial: <a href="https://posit.cloud/learn/primers">Posit Primers - Basics</a></li>
 </ul>
-
-
+<hr>
 </section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<section id="r-or-rstudio-wont-install" class="level3">
+<h3 class="anchored" data-anchor-id="r-or-rstudio-wont-install">R or RStudio won’t install?</h3>
+<p>Check your OS has sufficient disk space (at least 500 MB). If you get permission errors on Linux, use <code>sudo</code> or ask your system administrator.</p>
+</section>
+<section id="git-is-not-recognized" class="level3">
+<h3 class="anchored" data-anchor-id="git-is-not-recognized">Git is not recognized?</h3>
+<p>You may need to restart your Terminal/Command Prompt after installing Git.</p>
+</section>
+<section id="renvrestore-fails" class="level3">
+<h3 class="anchored" data-anchor-id="renvrestore-fails">renv::restore() fails?</h3>
+<ol type="1">
+<li><p>Update your packages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Try again:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>If still stuck, email <a href="mailto:deepak.tanwar@uzh.ch">deepak.tanwar@uzh.ch</a> with the error message.</p></li>
+</ol>
+</section>
+<section id="cannot-find-r-error-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="cannot-find-r-error-in-rstudio">“Cannot find R” error in RStudio?</h3>
+<p>Restart RStudio after installing R. If the problem persists, go to <strong>Tools → Global Options → R (General)</strong> and manually set the R version path.</p>
+<hr>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions?</h2>
+<p>If anything is unclear or you get stuck, email <strong><a href="mailto:deepak.tanwar@uzh.ch">deepak.tanwar@uzh.ch</a></strong> at least 2 days before the course. Include:</p>
+<ul>
+<li>Your operating system (macOS, Windows, Ubuntu version)</li>
+<li>The exact error message</li>
+<li>A screenshot if applicable</li>
+</ul>
+<p>We’re here to help you get ready! 🚀</p>
+
+
 </section>
 
 </main> <!-- /main -->

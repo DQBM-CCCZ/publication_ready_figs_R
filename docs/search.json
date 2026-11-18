@@ -408,23 +408,72 @@
   {
     "objectID": "qmd/precourse_preparation.html",
     "href": "qmd/precourse_preparation.html",
-    "title": "Pre-course Preparation",
+    "title": "Pre-course Setup",
     "section": "",
-    "text": "Understanding R syntax (objects, functions, operators).\nAbility to create and manipulate basic data structures: vectors, factors, data frames, and lists.\nFamiliarity with indexing and subsetting data.\nWriting simple scripts in RStudio or another R IDE.\nReading and importing data (read.csv(), read.table(), or readr).\n\n\n\n\nYou can evaluate your skills here:\n\nGoogle Form\nCoursera R Programming Skill Assessment\nNCEAS R Review and Assessment"
+    "text": "Complete these steps before the course day. It will take about 30–45 minutes."
   },
   {
-    "objectID": "qmd/precourse_preparation.html#prerequisites",
-    "href": "qmd/precourse_preparation.html#prerequisites",
-    "title": "Pre-course Preparation",
-    "section": "",
-    "text": "Understanding R syntax (objects, functions, operators).\nAbility to create and manipulate basic data structures: vectors, factors, data frames, and lists.\nFamiliarity with indexing and subsetting data.\nWriting simple scripts in RStudio or another R IDE.\nReading and importing data (read.csv(), read.table(), or readr).\n\n\n\n\nYou can evaluate your skills here:\n\nGoogle Form\nCoursera R Programming Skill Assessment\nNCEAS R Review and Assessment"
+    "objectID": "qmd/precourse_preparation.html#prerequisites-skill-assessment",
+    "href": "qmd/precourse_preparation.html#prerequisites-skill-assessment",
+    "title": "Pre-course Setup",
+    "section": "1. Prerequisites & Skill Assessment",
+    "text": "1. Prerequisites & Skill Assessment\n\nBasic R Programming Skills Required\nYou should be comfortable with:\n\nR syntax (objects, functions, operators)\nBasic data structures: vectors, factors, data frames, and lists\nIndexing and subsetting data\nWriting simple R scripts\nReading and importing data (read.csv(), read.table(), or readr)\n\n\n\nAssess Your Skills\nIf you’re unsure, evaluate your R knowledge with one of these:\n\nGoogle Form Assessment\nCoursera R Programming Skill Assessment\nNCEAS R Review and Assessment\n\n\n\n\n\n\n\nWarning\n\n\n\nStill unsure? Email deepak.tanwar@uzh.ch before the course to discuss whether this workshop is a good fit."
   },
   {
-    "objectID": "qmd/precourse_preparation.html#setup",
-    "href": "qmd/precourse_preparation.html#setup",
-    "title": "Pre-course Preparation",
-    "section": "Setup",
-    "text": "Setup\n\nComputational Requirements\n\nR 4.5.1\nRStudio (latest version)\nrenv R package installed: renv documentation"
+    "objectID": "qmd/precourse_preparation.html#install-r-version-4.6.2",
+    "href": "qmd/precourse_preparation.html#install-r-version-4.6.2",
+    "title": "Pre-course Setup",
+    "section": "2. Install R (Version 4.6.2)",
+    "text": "2. Install R (Version 4.6.2)\n\nmacOSWindowsLinux (Ubuntu/Debian)\n\n\nUsing Homebrew (recommended):\n\nIf you don’t have Homebrew installed, install it first:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nInstall R:\nbrew install r\n\nOr download directly:\n\nGo to CRAN - R for macOS\nDownload R-4.6.2-arm64.pkg (Apple Silicon) or R-4.6.2-x86_64.pkg (Intel)\nOpen the .pkg file and follow the installer\n\nVerify installation:\nR --version\n\n\n\nGo to CRAN - R for Windows\nClick Download R 4.6.2 for Windows\nOpen the .exe file and follow the installer\nUse all default options\n\nVerify installation:\nOpen Command Prompt or PowerShell and run:\nR --version\n\n\nAdd the CRAN repository and install:\nsudo apt update\nsudo apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install -y r-base r-base-dev\nVerify installation:\nR --version"
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#install-rstudio",
+    "href": "qmd/precourse_preparation.html#install-rstudio",
+    "title": "Pre-course Setup",
+    "section": "3. Install RStudio",
+    "text": "3. Install RStudio\nRStudio is the integrated development environment (IDE) you’ll use for this course.\n\nmacOSWindowsLinux (Ubuntu/Debian)\n\n\n\nGo to RStudio Download\nClick Download for macOS\nOpen the .dmg file\nDrag RStudio into the Applications folder\nLaunch RStudio from Applications\n\n\n\n\nGo to RStudio Download\nClick Download for Windows\nOpen the .exe file\nFollow the installer with default options\nLaunch RStudio from the Start menu\n\n\n\nDownload and install directly:\ncd ~/Downloads\nwget https://download1.rstudio.org/rstudio-2024.12.0-369-amd64.deb\nsudo dpkg -i rstudio-2024.12.0-369-amd64.deb\nOr install via your package manager:\nsudo apt install -y rstudio\nLaunch RStudio:\nrstudio &\n\n\n\nVerify installation:\nOpen RStudio. In the Console (bottom left), run:\nR.version$version.string\nYou should see version 4.6.2 or later."
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#install-required-r-packages",
+    "href": "qmd/precourse_preparation.html#install-required-r-packages",
+    "title": "Pre-course Setup",
+    "section": "4. Install Required R Packages",
+    "text": "4. Install Required R Packages\nOpen RStudio and run this in the Console:\n# Install required packages\npackages &lt;- c(\"ggplot2\", \"patchwork\", \"tidyverse\")\ninstall.packages(packages)\nThis will take 5–10 minutes. Watch for any errors.\nVerify installations:\nlibrary(ggplot2)\nlibrary(patchwork)\nlibrary(tidyverse)\nIf all three load without errors, you’re ready!"
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#set-up-the-course-repository",
+    "href": "qmd/precourse_preparation.html#set-up-the-course-repository",
+    "title": "Pre-course Setup",
+    "section": "5. Set Up the Course Repository",
+    "text": "5. Set Up the Course Repository\nWe’ll use renv for reproducibility. This keeps your R environment isolated and consistent.\n\nStep 1 — Clone the repository\n\nmacOS / LinuxWindows\n\n\nOpen Terminal and run:\ncd ~/Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\nOpen Command Prompt or PowerShell and run:\ncd %USERPROFILE%\\Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\n\n\n\nStep 2 — Restore the R environment with renv\nIn RStudio:\n\nOpen the project: File → Open Project… → publication_ready_figs_R.Rproj\nIn the Console, run:\n\nrenv::restore()\nThis downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.\nExpected output:\n✓ All done!\n# [1] \"All done!\""
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#test-everything",
+    "href": "qmd/precourse_preparation.html#test-everything",
+    "title": "Pre-course Setup",
+    "section": "6. Test Everything",
+    "text": "6. Test Everything\nBefore the course day, run all these checks:\n\nmacOS / Linux (Terminal)Windows (Command Prompt)RStudio Console (all platforms)\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nrstudio &\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nstart rstudio\n\n\n# Check key packages\nlibrary(ggplot2)\nlibrary(patchwork)\nlibrary(tidyverse)\n\n# Check renv\nrenv::status()\n\n\n\nAll checks should pass with no errors."
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#pre-course-activity-optional",
+    "href": "qmd/precourse_preparation.html#pre-course-activity-optional",
+    "title": "Pre-course Setup",
+    "section": "7. Pre-course Activity (Optional)",
+    "text": "7. Pre-course Activity (Optional)\nWarm up your R skills:\n\nWatch R Basics Playlist (20 minutes)\nRead R for Data Science - Chapter 1\nTry this interactive tutorial: Posit Primers - Basics"
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#troubleshooting",
+    "href": "qmd/precourse_preparation.html#troubleshooting",
+    "title": "Pre-course Setup",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\nR or RStudio won’t install?\nCheck your OS has sufficient disk space (at least 500 MB). If you get permission errors on Linux, use sudo or ask your system administrator.\n\n\nGit is not recognized?\nYou may need to restart your Terminal/Command Prompt after installing Git.\n\n\nrenv::restore() fails?\n\nUpdate your packages:\nupdate.packages()\nTry again:\nrenv::restore()\nIf still stuck, email deepak.tanwar@uzh.ch with the error message.\n\n\n\n“Cannot find R” error in RStudio?\nRestart RStudio after installing R. If the problem persists, go to Tools → Global Options → R (General) and manually set the R version path."
+  },
+  {
+    "objectID": "qmd/precourse_preparation.html#questions",
+    "href": "qmd/precourse_preparation.html#questions",
+    "title": "Pre-course Setup",
+    "section": "Questions?",
+    "text": "Questions?\nIf anything is unclear or you get stuck, email deepak.tanwar@uzh.ch at least 2 days before the course. Include:\n\nYour operating system (macOS, Windows, Ubuntu version)\nThe exact error message\nA screenshot if applicable\n\nWe’re here to help you get ready! 🚀"
   },
   {
     "objectID": "exercises/exercise_block_7.html",

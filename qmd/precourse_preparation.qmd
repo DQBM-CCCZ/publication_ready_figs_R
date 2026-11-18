@@ -1,30 +1,333 @@
 ---
-title: "Pre-course Preparation"
+title: "Pre-course Setup"
 format: html
 ---
 
-## Prerequisites
+Complete these steps **before the course day**. It will take about 30–45 minutes.
 
-### Basic R Programming Skills
+---
 
-- Understanding R syntax (objects, functions, operators).
-- Ability to create and manipulate basic data structures: vectors, factors, data frames, and lists.
-- Familiarity with indexing and subsetting data.
-- Writing simple scripts in RStudio or another R IDE.
-- Reading and importing data (`read.csv()`, `read.table()`, or `readr`).
+## 1. Prerequisites & Skill Assessment
 
-### Skill Self-Assessment
+### Basic R Programming Skills Required
 
-You can evaluate your skills here:
+You should be comfortable with:
 
-- [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform)
+- R syntax (objects, functions, operators)
+- Basic data structures: vectors, factors, data frames, and lists
+- Indexing and subsetting data
+- Writing simple R scripts
+- Reading and importing data (`read.csv()`, `read.table()`, or `readr`)
+
+### Assess Your Skills
+
+If you're unsure, evaluate your R knowledge with one of these:
+
+- [Google Form Assessment](https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform)
 - [Coursera R Programming Skill Assessment](https://www.coursera.org/resources/r-programming-skill-assessment)
 - [NCEAS R Review and Assessment](https://nceas.github.io/oss-lessons/r-review-and-assessment/r-review-and-assessment.html)
 
-## Setup
+::: {.callout-warning}
+**Still unsure?** Email [deepak.tanwar@uzh.ch](mailto:deepak.tanwar@uzh.ch) before the course to discuss whether this workshop is a good fit.
+:::
 
-### Computational Requirements
+---
 
-- R 4.5.1
-- RStudio (latest version)
-- `renv` R package installed: [renv documentation](https://rstudio.github.io/renv/articles/renv.html)
+## 2. Install R (Version 4.6.2)
+
+::: {.panel-tabset}
+
+### macOS
+
+**Using Homebrew (recommended):**
+
+1. If you don't have Homebrew installed, install it first:
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. Install R:
+   ```bash
+   brew install r
+   ```
+
+**Or download directly:**
+
+1. Go to [CRAN - R for macOS](https://cran.r-project.org/bin/macosx/)
+2. Download **R-4.6.2-arm64.pkg** (Apple Silicon) or **R-4.6.2-x86_64.pkg** (Intel)
+3. Open the `.pkg` file and follow the installer
+
+**Verify installation:**
+
+```bash
+R --version
+```
+
+### Windows
+
+1. Go to [CRAN - R for Windows](https://cran.r-project.org/bin/windows/base/)
+2. Click **Download R 4.6.2 for Windows**
+3. Open the `.exe` file and follow the installer
+4. Use all default options
+
+**Verify installation:**
+
+Open **Command Prompt** or **PowerShell** and run:
+
+```cmd
+R --version
+```
+
+### Linux (Ubuntu/Debian)
+
+Add the CRAN repository and install:
+
+```bash
+sudo apt update
+sudo apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+sudo apt install -y r-base r-base-dev
+```
+
+**Verify installation:**
+
+```bash
+R --version
+```
+
+:::
+
+---
+
+## 3. Install RStudio
+
+RStudio is the integrated development environment (IDE) you'll use for this course.
+
+::: {.panel-tabset}
+
+### macOS
+
+1. Go to [RStudio Download](https://posit.co/download/rstudio-desktop/)
+2. Click **Download for macOS**
+3. Open the `.dmg` file
+4. Drag RStudio into the **Applications** folder
+5. Launch RStudio from Applications
+
+### Windows
+
+1. Go to [RStudio Download](https://posit.co/download/rstudio-desktop/)
+2. Click **Download for Windows**
+3. Open the `.exe` file
+4. Follow the installer with default options
+5. Launch RStudio from the Start menu
+
+### Linux (Ubuntu/Debian)
+
+Download and install directly:
+
+```bash
+cd ~/Downloads
+wget https://download1.rstudio.org/rstudio-2024.12.0-369-amd64.deb
+sudo dpkg -i rstudio-2024.12.0-369-amd64.deb
+```
+
+Or install via your package manager:
+
+```bash
+sudo apt install -y rstudio
+```
+
+Launch RStudio:
+
+```bash
+rstudio &
+```
+
+:::
+
+**Verify installation:**
+
+Open RStudio. In the **Console** (bottom left), run:
+
+```r
+R.version$version.string
+```
+
+You should see version 4.6.2 or later.
+
+---
+
+## 4. Install Required R Packages
+
+Open RStudio and run this in the **Console**:
+
+```r
+# Install required packages
+packages <- c("ggplot2", "patchwork", "tidyverse")
+install.packages(packages)
+```
+
+This will take 5–10 minutes. Watch for any errors.
+
+**Verify installations:**
+
+```r
+library(ggplot2)
+library(patchwork)
+library(tidyverse)
+```
+
+If all three load without errors, you're ready!
+
+---
+
+## 5. Set Up the Course Repository
+
+We'll use **renv** for reproducibility. This keeps your R environment isolated and consistent.
+
+### Step 1 — Clone the repository
+
+::: {.panel-tabset}
+
+### macOS / Linux
+
+Open **Terminal** and run:
+
+```bash
+cd ~/Documents
+git clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git
+cd publication_ready_figs_R
+```
+
+### Windows
+
+Open **Command Prompt** or **PowerShell** and run:
+
+```cmd
+cd %USERPROFILE%\Documents
+git clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git
+cd publication_ready_figs_R
+```
+
+:::
+
+### Step 2 — Restore the R environment with renv
+
+In RStudio:
+
+1. Open the project: **File → Open Project... → publication_ready_figs_R.Rproj**
+2. In the **Console**, run:
+
+```r
+renv::restore()
+```
+
+This downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.
+
+**Expected output:**
+
+```
+✓ All done!
+# [1] "All done!"
+```
+
+---
+
+## 6. Test Everything
+
+Before the course day, run all these checks:
+
+::: {.panel-tabset}
+
+### macOS / Linux (Terminal)
+
+```bash
+# Check R version
+R --version
+
+# Check git
+git --version
+
+# Launch RStudio
+rstudio &
+```
+
+### Windows (Command Prompt)
+
+```cmd
+# Check R version
+R --version
+
+# Check git
+git --version
+
+# Launch RStudio
+start rstudio
+```
+
+### RStudio Console (all platforms)
+
+```r
+# Check key packages
+library(ggplot2)
+library(patchwork)
+library(tidyverse)
+
+# Check renv
+renv::status()
+```
+
+:::
+
+**All checks should pass with no errors.**
+
+---
+
+## 7. Pre-course Activity (Optional)
+
+Warm up your R skills:
+
+- Watch [R Basics Playlist](https://www.youtube.com/playlist?list=PLIhLvue17Sd7wQQhUci0OWMGnCvoNvR50) (20 minutes)
+- Read [R for Data Science - Chapter 1](https://r4ds.had.co.nz/introduction.html)
+- Try this interactive tutorial: [Posit Primers - Basics](https://posit.cloud/learn/primers)
+
+---
+
+## Troubleshooting
+
+### R or RStudio won't install?
+
+Check your OS has sufficient disk space (at least 500 MB). If you get permission errors on Linux, use `sudo` or ask your system administrator.
+
+### Git is not recognized?
+
+You may need to restart your Terminal/Command Prompt after installing Git.
+
+### renv::restore() fails?
+
+1. Update your packages:
+   ```r
+   update.packages()
+   ```
+2. Try again:
+   ```r
+   renv::restore()
+   ```
+3. If still stuck, email [deepak.tanwar@uzh.ch](mailto:deepak.tanwar@uzh.ch) with the error message.
+
+### "Cannot find R" error in RStudio?
+
+Restart RStudio after installing R. If the problem persists, go to **Tools → Global Options → R (General)** and manually set the R version path.
+
+---
+
+## Questions?
+
+If anything is unclear or you get stuck, email **[deepak.tanwar@uzh.ch](mailto:deepak.tanwar@uzh.ch)** at least 2 days before the course. Include:
+
+- Your operating system (macOS, Windows, Ubuntu version)
+- The exact error message
+- A screenshot if applicable
+
+We're here to help you get ready! 🚀
