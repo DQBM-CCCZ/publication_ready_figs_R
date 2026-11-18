@@ -956,14 +956,21 @@
     "href": "qmd/schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "block\ndate\npresentation\nexercise\nvideo\n\n\n\n\n1\n13 Oct 2025\nSlides\nExercise\nVideo\n\n\n2\n20 Oct 2025\nSlides\nExercise\nVideo\n\n\n3\n27 Oct 2025\nSlides\nExercise\nVideo\n\n\n4\n03 Nov 2025\nSlides\nExercise\nVideo\n\n\n5\n10 Nov 2025\nSlides\nExercise\nVideo\n\n\n6\n17 Nov 2025\nSlides\nExercise\nVideo\n\n\n7\n24 Nov 2025\nSlides\nExercise\nVideo"
+    "text": "Note\n\n\n\nNote: This is a 2 half-day workshop. Each half-day runs 13:00–17:00 with coffee breaks included."
   },
   {
-    "objectID": "qmd/schedule.html#course-schedule",
-    "href": "qmd/schedule.html#course-schedule",
+    "objectID": "qmd/schedule.html#half-day-1-13001700",
+    "href": "qmd/schedule.html#half-day-1-13001700",
     "title": "Schedule",
-    "section": "",
-    "text": "block\ndate\npresentation\nexercise\nvideo\n\n\n\n\n1\n13 Oct 2025\nSlides\nExercise\nVideo\n\n\n2\n20 Oct 2025\nSlides\nExercise\nVideo\n\n\n3\n27 Oct 2025\nSlides\nExercise\nVideo\n\n\n4\n03 Nov 2025\nSlides\nExercise\nVideo\n\n\n5\n10 Nov 2025\nSlides\nExercise\nVideo\n\n\n6\n17 Nov 2025\nSlides\nExercise\nVideo\n\n\n7\n24 Nov 2025\nSlides\nExercise\nVideo"
+    "section": "Half-Day 1 (13:00–17:00)",
+    "text": "Half-Day 1 (13:00–17:00)\n\n\n\nTime\nModule\nTopics\nSlides\nExercise\n\n\n\n\n13:00–13:15\nWelcome\nIntroductions, course overview, visualization principles\n—\n—\n\n\n13:15–14:15\nModule 1: Visualization Principles\nWhy figures matter, clarity vs. complexity, common mistakes, visual communication\nSlides\nExercise\n\n\n14:15–14:30\nCoffee Break\n\n\n\n\n\n14:30–15:15\nModule 2: Base R Graphics\nplot(), barplot(), hist(), customization basics, legends & labels\nSlides\nExercise\n\n\n15:15–16:00\nModule 3: ggplot2 Fundamentals\nLayers, aesthetics, geoms, basic plots, grammar of graphics\nSlides\nExercise\n\n\n16:00–16:15\nCoffee Break\n\n\n\n\n\n16:15–17:00\nModule 4: Styling & Themes\nScales, themes, annotations, legends, color palettes, visual hierarchy\nSlides\nExercise"
+  },
+  {
+    "objectID": "qmd/schedule.html#half-day-2-13001700",
+    "href": "qmd/schedule.html#half-day-2-13001700",
+    "title": "Schedule",
+    "section": "Half-Day 2 (13:00–17:00)",
+    "text": "Half-Day 2 (13:00–17:00)\n\n\n\nTime\nModule\nTopics\nSlides\nExercise\n\n\n\n\n13:00–13:15\nRecap & Agenda\nDay 1 review, Day 2 overview\n—\n—\n\n\n13:15–14:15\nModule 5: Publication Standards\nFigure formats, resolution, dimensions, DPI, journal requirements, ggsave()\nSlides\nExercise\n\n\n14:15–14:30\nCoffee Break\n\n\n\n\n\n14:30–15:15\nModule 6: Multi-panel Figures\npatchwork, layout design, alignment, combined plots, shared legends\nSlides\nExercise\n\n\n15:15–16:00\nModule 7: Advanced Topics\nFaceting, statistical overlays, annotations, final tips\nSlides\nExercise\n\n\n16:00–16:15\nCoffee Break\n\n\n\n\n\n16:15–17:00\nFinal Project\nCreate publication-ready figure(s) from provided data\n—\nProject\n\n\n17:00–17:15\nWrap-up\nQ&A, feedback, certificate, next steps\n—\n—"
   },
   {
     "objectID": "slides/slide_block_2.html#recap-of-block-1",
