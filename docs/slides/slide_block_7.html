@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Deepak Tanwar">
   <title>Publication-Ready Figure Generation in R – Block 7</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -232,13 +232,13 @@ Deepak Tanwar
 <section id="mastering-ggsave" class="slide level2">
 <h2>Mastering <code>ggsave()</code></h2>
 <p><code>ggsave()</code> is your best friend for exporting <code>ggplot2</code> plots.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>my_ggplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>my_ggplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="co"># Save as a PDF (vector)</span></span>
 <span id="cb1-4"><a></a><span class="fu">ggsave</span>(<span class="st">"my_plot.pdf"</span>, <span class="at">plot =</span> my_ggplot, <span class="at">width =</span> <span class="dv">180</span>, <span class="at">height =</span> <span class="dv">100</span>, <span class="at">units =</span> <span class="st">"mm"</span>)</span>
 <span id="cb1-5"><a></a></span>
 <span id="cb1-6"><a></a><span class="co"># Save as a high-resolution TIFF (raster)</span></span>
-<span id="cb1-7"><a></a><span class="fu">ggsave</span>(<span class="st">"my_plot.tiff"</span>, <span class="at">plot =</span> my_ggplot, <span class="at">width =</span> <span class="dv">180</span>, <span class="at">height =</span> <span class="dv">100</span>, <span class="at">units =</span> <span class="st">"mm"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a></a><span class="fu">ggsave</span>(<span class="st">"my_plot.tiff"</span>, <span class="at">plot =</span> my_ggplot, <span class="at">width =</span> <span class="dv">180</span>, <span class="at">height =</span> <span class="dv">100</span>, <span class="at">units =</span> <span class="st">"mm"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Key Parameters</strong>:</p>
 <ul>
 <li><p><code>width</code>, <code>height</code>, <code>units</code>: Always specify the physical size required by the journal.</p></li>
@@ -522,7 +522,7 @@ Deepak Tanwar
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -596,13 +596,14 @@ Deepak Tanwar
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -617,7 +618,7 @@ Deepak Tanwar
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/DQBM-SIB\.github\.io\/publication_ready_figs_R\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
