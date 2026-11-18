@@ -434,25 +434,25 @@
     "text": "3. Install RStudio\nRStudio is the integrated development environment (IDE) you’ll use for this course.\n\nmacOSWindowsLinux (Ubuntu/Debian)\n\n\n\nGo to RStudio Download\nClick Download for macOS\nOpen the .dmg file\nDrag RStudio into the Applications folder\nLaunch RStudio from Applications\n\n\n\n\nGo to RStudio Download\nClick Download for Windows\nOpen the .exe file\nFollow the installer with default options\nLaunch RStudio from the Start menu\n\n\n\nUsing your package manager (recommended — always gets latest):\nsudo apt install -y rstudio\nOr download the latest version directly:\n\nGo to RStudio Download\nChoose Linux and your distribution\nDownload the .deb file\nInstall:\nsudo dpkg -i rstudio-*.deb\nsudo apt install -f  # Fix any missing dependencies\n\nLaunch RStudio:\nrstudio &\n\n\n\nVerify installation:\nOpen RStudio. In the Console (bottom left), run:\nR.version$version.string\nYou should see version 4.6.2 or later."
   },
   {
-    "objectID": "qmd/precourse_preparation.html#install-required-r-packages",
-    "href": "qmd/precourse_preparation.html#install-required-r-packages",
+    "objectID": "qmd/precourse_preparation.html#install-renv-for-reproducible-environments",
+    "href": "qmd/precourse_preparation.html#install-renv-for-reproducible-environments",
     "title": "Pre-course Setup",
-    "section": "4. Install Required R Packages",
-    "text": "4. Install Required R Packages\nOpen RStudio and run this in the Console:\n# Install required packages\npackages &lt;- c(\"ggplot2\", \"patchwork\", \"tidyverse\")\ninstall.packages(packages)\nThis will take 5–10 minutes. Watch for any errors.\nVerify installations:\nlibrary(ggplot2)\nlibrary(patchwork)\nlibrary(tidyverse)\nIf all three load without errors, you’re ready!"
+    "section": "4. Install renv for Reproducible Environments",
+    "text": "4. Install renv for Reproducible Environments\nrenv ensures all participants use the same R package versions. Install it first:\ninstall.packages(\"renv\")\nVerify:\nlibrary(renv)\nrenv::version()"
   },
   {
     "objectID": "qmd/precourse_preparation.html#set-up-the-course-repository",
     "href": "qmd/precourse_preparation.html#set-up-the-course-repository",
     "title": "Pre-course Setup",
     "section": "5. Set Up the Course Repository",
-    "text": "5. Set Up the Course Repository\nWe’ll use renv for reproducibility. This keeps your R environment isolated and consistent.\n\nStep 1 — Clone the repository\n\nmacOS / LinuxWindows\n\n\nOpen Terminal and run:\ncd ~/Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\nOpen Command Prompt or PowerShell and run:\ncd %USERPROFILE%\\Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\n\n\n\nStep 2 — Restore the R environment with renv\nIn RStudio:\n\nOpen the project: File → Open Project… → publication_ready_figs_R.Rproj\nIn the Console, run:\n\nrenv::restore()\nThis downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.\nExpected output:\n✓ All done!\n# [1] \"All done!\""
+    "text": "5. Set Up the Course Repository\n\nStep 1 — Clone the repository\n\nmacOS / LinuxWindows\n\n\nOpen Terminal and run:\ncd ~/Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\nOpen Command Prompt or PowerShell and run:\ncd %USERPROFILE%\\Documents\ngit clone https://github.com/DQBM-CCCZ/publication_ready_figs_R.git\ncd publication_ready_figs_R\n\n\n\n\n\nStep 2 — Restore packages using renv.lock\nIn RStudio, open the project: File → Open Project… → publication_ready_figs_R.Rproj\nThen in the Console, run:\nrenv::restore(\"https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock\")\nThis downloads and installs all packages in the exact versions specified. It may take 10–15 minutes on first run.\nExpected output:\n✓ All done!\n# [1] \"All done!\""
   },
   {
     "objectID": "qmd/precourse_preparation.html#test-everything",
     "href": "qmd/precourse_preparation.html#test-everything",
     "title": "Pre-course Setup",
     "section": "6. Test Everything",
-    "text": "6. Test Everything\nBefore the course day, run all these checks:\n\nmacOS / Linux (Terminal)Windows (Command Prompt)RStudio Console (all platforms)\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nrstudio &\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nstart rstudio\n\n\n# Check key packages\nlibrary(ggplot2)\nlibrary(patchwork)\nlibrary(tidyverse)\n\n# Check renv\nrenv::status()\n\n\n\nAll checks should pass with no errors."
+    "text": "6. Test Everything\nBefore the course day, run all these checks:\n\nmacOS / Linux (Terminal)Windows (Command Prompt)RStudio Console (all platforms)\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nrstudio &\n\n\n# Check R version\nR --version\n\n# Check git\ngit --version\n\n# Launch RStudio\nstart rstudio\n\n\n# Check renv is working\nlibrary(renv)\nrenv::status()\n\n# Check key packages are installed\nlibrary(ggplot2)\nlibrary(patchwork)\nlibrary(tidyverse)\n\n\n\nAll checks should pass with no errors."
   },
   {
     "objectID": "qmd/precourse_preparation.html#pre-course-activity-optional",

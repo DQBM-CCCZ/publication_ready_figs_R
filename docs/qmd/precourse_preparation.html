@@ -404,11 +404,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#install-r-version-4.6.2" id="toc-install-r-version-4.6.2" class="nav-link" data-scroll-target="#install-r-version-4.6.2">2. Install R (Version 4.6.2)</a></li>
   <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">3. Install RStudio</a></li>
-  <li><a href="#install-required-r-packages" id="toc-install-required-r-packages" class="nav-link" data-scroll-target="#install-required-r-packages">4. Install Required R Packages</a></li>
+  <li><a href="#install-renv-for-reproducible-environments" id="toc-install-renv-for-reproducible-environments" class="nav-link" data-scroll-target="#install-renv-for-reproducible-environments">4. Install renv for Reproducible Environments</a></li>
   <li><a href="#set-up-the-course-repository" id="toc-set-up-the-course-repository" class="nav-link" data-scroll-target="#set-up-the-course-repository">5. Set Up the Course Repository</a>
   <ul class="collapse">
   <li><a href="#step-1-clone-the-repository" id="toc-step-1-clone-the-repository" class="nav-link" data-scroll-target="#step-1-clone-the-repository">Step 1 — Clone the repository</a></li>
-  <li><a href="#step-2-restore-the-r-environment-with-renv" id="toc-step-2-restore-the-r-environment-with-renv" class="nav-link" data-scroll-target="#step-2-restore-the-r-environment-with-renv">Step 2 — Restore the R environment with renv</a></li>
+  <li><a href="#step-2-restore-packages-using-renv.lock" id="toc-step-2-restore-packages-using-renv.lock" class="nav-link" data-scroll-target="#step-2-restore-packages-using-renv.lock">Step 2 — Restore packages using renv.lock</a></li>
   </ul></li>
   <li><a href="#test-everything" id="toc-test-everything" class="nav-link" data-scroll-target="#test-everything">6. Test Everything</a></li>
   <li><a href="#pre-course-activity-optional" id="toc-pre-course-activity-optional" class="nav-link" data-scroll-target="#pre-course-activity-optional">7. Pre-course Activity (Optional)</a></li>
@@ -579,23 +579,17 @@ Warning
 <p>You should see version 4.6.2 or later.</p>
 <hr>
 </section>
-<section id="install-required-r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="install-required-r-packages">4. Install Required R Packages</h2>
-<p>Open RStudio and run this in the <strong>Console</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"patchwork"</span>, <span class="st">"tidyverse"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(packages)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will take 5–10 minutes. Watch for any errors.</p>
-<p><strong>Verify installations:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If all three load without errors, you’re ready!</p>
+<section id="install-renv-for-reproducible-environments" class="level2">
+<h2 class="anchored" data-anchor-id="install-renv-for-reproducible-environments">4. Install renv for Reproducible Environments</h2>
+<p><strong>renv</strong> ensures all participants use the same R package versions. Install it first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verify:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">version</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 <section id="set-up-the-course-repository" class="level2">
 <h2 class="anchored" data-anchor-id="set-up-the-course-repository">5. Set Up the Course Repository</h2>
-<p>We’ll use <strong>renv</strong> for reproducibility. This keeps your R environment isolated and consistent.</p>
 <section id="step-1-clone-the-repository" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-clone-the-repository">Step 1 — Clone the repository</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -616,15 +610,12 @@ Warning
 </div>
 </div>
 </section>
-<section id="step-2-restore-the-r-environment-with-renv" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-restore-the-r-environment-with-renv">Step 2 — Restore the R environment with renv</h3>
-<p>In RStudio:</p>
-<ol type="1">
-<li>Open the project: <strong>File → Open Project… → publication_ready_figs_R.Rproj</strong></li>
-<li>In the <strong>Console</strong>, run:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.</p>
+<section id="step-2-restore-packages-using-renv.lock" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-restore-packages-using-renv.lock">Step 2 — Restore packages using renv.lock</h3>
+<p>In RStudio, open the project: <strong>File → Open Project… → publication_ready_figs_R.Rproj</strong></p>
+<p>Then in the <strong>Console</strong>, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>(<span class="st">"https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads and installs all packages in the exact versions specified. It may take 10–15 minutes on first run.</p>
 <p><strong>Expected output:</strong></p>
 <pre><code>✓ All done!
 # [1] "All done!"</code></pre>
@@ -658,13 +649,14 @@ Warning
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">start</span> rstudio</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check key packages</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check renv</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check renv is working</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(renv)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check key packages are installed</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

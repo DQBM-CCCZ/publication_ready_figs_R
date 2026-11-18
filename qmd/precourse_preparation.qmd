@@ -161,33 +161,24 @@ You should see version 4.6.2 or later.
 
 ---
 
-## 4. Install Required R Packages
+## 4. Install renv for Reproducible Environments
 
-Open RStudio and run this in the **Console**:
-
-```r
-# Install required packages
-packages <- c("ggplot2", "patchwork", "tidyverse")
-install.packages(packages)
-```
-
-This will take 5–10 minutes. Watch for any errors.
-
-**Verify installations:**
+**renv** ensures all participants use the same R package versions. Install it first:
 
 ```r
-library(ggplot2)
-library(patchwork)
-library(tidyverse)
+install.packages("renv")
 ```
 
-If all three load without errors, you're ready!
+Verify:
+
+```r
+library(renv)
+renv::version()
+```
 
 ---
 
 ## 5. Set Up the Course Repository
-
-We'll use **renv** for reproducibility. This keeps your R environment isolated and consistent.
 
 ### Step 1 — Clone the repository
 
@@ -215,18 +206,17 @@ cd publication_ready_figs_R
 
 :::
 
-### Step 2 — Restore the R environment with renv
+### Step 2 — Restore packages using renv.lock
 
-In RStudio:
+In RStudio, open the project: **File → Open Project... → publication_ready_figs_R.Rproj**
 
-1. Open the project: **File → Open Project... → publication_ready_figs_R.Rproj**
-2. In the **Console**, run:
+Then in the **Console**, run:
 
 ```r
-renv::restore()
+renv::restore("https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock")
 ```
 
-This downloads and installs all packages in isolated environments. It may take 10–15 minutes on first run.
+This downloads and installs all packages in the exact versions specified. It may take 10–15 minutes on first run.
 
 **Expected output:**
 
@@ -272,13 +262,14 @@ start rstudio
 ### RStudio Console (all platforms)
 
 ```r
-# Check key packages
+# Check renv is working
+library(renv)
+renv::status()
+
+# Check key packages are installed
 library(ggplot2)
 library(patchwork)
 library(tidyverse)
-
-# Check renv
-renv::status()
 ```
 
 :::
