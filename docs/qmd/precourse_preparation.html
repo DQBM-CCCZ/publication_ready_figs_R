@@ -614,7 +614,7 @@ Warning
 <h3 class="anchored" data-anchor-id="step-2-restore-packages-using-renv.lock">Step 2 — Restore packages using renv.lock</h3>
 <p>In RStudio, open the project: <strong>File → Open Project… → publication_ready_figs_R.Rproj</strong></p>
 <p>Then in the <strong>Console</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>(<span class="st">"https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>(<span class="at">lockfile =</span> <span class="st">"https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This downloads and installs all packages in the exact versions specified. It may take 10–15 minutes on first run.</p>
 <p><strong>Expected output:</strong></p>
 <pre><code>✓ All done!

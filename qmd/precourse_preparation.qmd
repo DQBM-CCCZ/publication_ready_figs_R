@@ -213,7 +213,7 @@ In RStudio, open the project: **File → Open Project... → publication_ready_f
 Then in the **Console**, run:
 
 ```r
-renv::restore("https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock")
+renv::restore(lockfile = "https://raw.githubusercontent.com/DQBM-CCCZ/publication_ready_figs_R/refs/heads/main/renv.lock")
 ```
 
 This downloads and installs all packages in the exact versions specified. It may take 10–15 minutes on first run.
