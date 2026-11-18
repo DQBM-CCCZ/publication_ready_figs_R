@@ -18,7 +18,7 @@
 
 /* Navbar */
 .navbar {
-  background-color: var(--git-orange);
+  background-color: var(--git-orange) !important;
 }
 
 .navbar-nav .nav-link, .navbar-brand {
