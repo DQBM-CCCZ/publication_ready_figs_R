@@ -65,20 +65,39 @@ Designed for researchers at the Comprehensive Cancer Center Zurich (CCCZ), Unive
 
 ## Course Schedule
 
-| Half-Day | Time | Session | Topics | Exercises |
-|----------|------|---------|--------|-----------|
-| **Morning (Day 1)** | 09:00–09:15 | Welcome | Introductions, course overview | — |
-| | 09:15–10:15 | **Block 1: Visualization Principles** | Why figures matter, clarity vs. complexity, common mistakes | Ex 1 |
-| | 10:15–10:30 | *Break* | | |
-| | 10:30–12:00 | **Block 2 & 3: Base R + ggplot2 Fundamentals** | `plot()`, layers, aesthetics, `geoms`, basic plots | Ex 2, Ex 3 |
-| **Afternoon (Day 1)** | 13:00–14:30 | **Block 4: Styling & Themes** | Scales, themes, annotations, legends | Ex 4 |
-| | 14:30–14:45 | *Break* | | |
-| | 14:45–16:00 | **Block 5: Publication Standards** | Figure formats, resolution, dimensions, journal requirements | Ex 5 |
-| **Morning (Day 2)** | 09:00–10:30 | **Block 6: Multi-panel Figures** | `patchwork`, layout, alignment, combined plots | Ex 6 |
-| | 10:30–10:45 | *Break* | | |
-| | 10:45–12:00 | **Block 7: Advanced Topics** | Statistical overlays, faceting, final tips | Ex 7 |
-| **Afternoon (Day 2)** | 13:00–15:30 | Final Project | Create publication-ready figure(s) from provided data | — |
-| | 15:30–16:00 | Wrap-up & Feedback | Q&A, certificate, next steps | — |
+### **Morning (Half-Day 1) — 09:00–12:00**
+
+| Time | Session | Topics | Exercises |
+|------|---------|--------|-----------|
+| 09:00–09:15 | Welcome | Introductions, course overview, visualization principles | — |
+| 09:15–10:15 | **Block 1:** Visualization Principles | Why figures matter, clarity vs. complexity, common mistakes, effective storytelling | [Ex 1](exercises/exercise_block_1.qmd) |
+| 10:15–10:30 | *Break* | ☕ Coffee break | — |
+| 10:30–11:15 | **Block 2:** Base R Graphics | `plot()`, `barplot()`, `hist()`, customization basics, legends & labels | [Ex 2](exercises/exercise_block_2.qmd) |
+| 11:15–12:00 | **Block 3:** ggplot2 Fundamentals | Layers, aesthetics, `geoms`, basic plots, understanding the grammar of graphics | [Ex 3](exercises/exercise_block_3.qmd) |
+
+**What You'll Learn (Morning):**
+- Core visualization principles for scientific communication
+- Introduction to base R and ggplot2 syntax
+- Creating your first publication-ready plots
+
+---
+
+### **Afternoon (Half-Day 2) — 13:00–17:00**
+
+| Time | Session | Topics | Exercises |
+|------|---------|--------|-----------|
+| 13:00–14:00 | **Block 4:** Styling & Themes | Scales, themes, annotations, legends, color palettes, visual hierarchy | [Ex 4](exercises/exercise_block_4.qmd) |
+| 14:00–14:15 | *Break* | ☕ Coffee break | — |
+| 14:15–15:15 | **Block 5:** Publication Standards | Figure formats, resolution, dimensions, DPI, journal requirements, exporting with `ggsave()` | [Ex 5](exercises/exercise_block_5.qmd) |
+| 15:15–16:00 | **Block 6:** Multi-panel Figures | `patchwork`, layout design, alignment, combined plots with shared legends | [Ex 6](exercises/exercise_block_6.qmd) |
+| 16:00–16:15 | *Break* | ☕ Final break | — |
+| 16:15–17:00 | **Block 7** + **Final Project** | Advanced topics (faceting, statistical overlays), create publication-ready figures from provided data | [Ex 7](exercises/exercise_block_7.qmd) |
+
+**What You'll Learn (Afternoon):**
+- Professional styling and publication-compliant formatting
+- Multi-panel figure assembly with patchwork
+- Advanced visualization techniques
+- Complete workflow for publication-ready figures
 
 ---
 
@@ -86,13 +105,49 @@ Designed for researchers at the Comprehensive Cancer Center Zurich (CCCZ), Unive
 
 This project is structured as follows:
 
-- `_quarto.yml`: Configuration file for Quarto.
-- `index.qmd`: The main page of the course website, containing learning objectives and course overview.
-- `qmd/`: Directory containing Quarto markdown files for course content, setup guides, and cheat sheets.
-- `slides/`: Directory containing Quarto markdown files for presentation slides (Blocks 1–7).
-- `exercises/`: Directory containing Quarto markdown files for exercises and the final project.
-- `styles.css`: Custom CSS for styling the website.
-- `docs/`: Directory where the rendered website is built.
+```
+publication_ready_figs_R/
+├── README.md                          # This file
+├── CONTRIBUTING.md                    # Contribution guidelines
+├── setup.md                           # Pre-course setup instructions
+├── LICENSE                            # MIT License
+├── _quarto.yml                        # Quarto configuration
+├── index.qmd                          # Course homepage
+├── styles.css                         # Custom website styling
+│
+├── qmd/                               # Course content
+│   ├── precourse_preparation.qmd     # Prerequisites & skill assessment
+│   └── schedule.qmd                   # Detailed course schedule
+│
+├── slides/                            # Presentation slides (Blocks 1-7)
+│   ├── slide_block_1.qmd             # Visualization Principles
+│   ├── slide_block_2.qmd             # Base R Graphics
+│   ├── slide_block_3.qmd             # ggplot2 Fundamentals
+│   ├── slide_block_4.qmd             # Styling & Themes
+│   ├── slide_block_5.qmd             # Publication Standards
+│   ├── slide_block_6.qmd             # Multi-panel Figures
+│   └── slide_block_7.qmd             # Advanced Topics
+│
+├── exercises/                         # Hands-on exercises (Blocks 1-7)
+│   ├── exercise_block_1.qmd
+│   ├── exercise_block_2.qmd
+│   ├── exercise_block_3.qmd
+│   ├── exercise_block_4.qmd
+│   ├── exercise_block_5.qmd
+│   ├── exercise_block_6.qmd
+│   └── exercise_block_7.qmd
+│
+├── assets/
+│   ├── images/                       # Logos and images
+│   │   ├── krauthammer.jpg          # Prof. Krauthammer
+│   │   └── cccz.jpg                 # CCCZ logo
+│   ├── data/                         # Sample datasets for exercises
+│   ├── figs/                         # Course illustrations & examples
+│   └── ggplot2/                      # ggplot2-related resources
+│
+├── docs/                              # Rendered website (auto-generated)
+└── renv/                              # Reproducible R environment
+```
 
 ---
 
@@ -105,7 +160,8 @@ This project is structured as follows:
 - Writing simple scripts in RStudio or another R IDE
 - Reading and importing data (`read.csv()`, `read.table()`, or `readr`)
 
-You can evaluate your skills here:
+**Skill Self-Assessment:**
+Unsure if you're ready? Evaluate your R skills:
 - [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform)
 - [Coursera R Programming Skill Assessment](https://www.coursera.org/resources/r-programming-skill-assessment)
 - [NCEAS R Review and Assessment](https://nceas.github.io/oss-lessons/r-review-and-assessment/r-review-and-assessment.html)
@@ -116,16 +172,28 @@ You can evaluate your skills here:
 
 - **R** 4.5.1 or later
 - **RStudio** (latest version recommended)
+- **Quarto** (for rendering course materials)
 - **renv** R package installed for reproducible environments
   - See: [renv documentation](https://rstudio.github.io/renv/articles/renv.html)
 
+**Key R packages used in this course:**
+- `ggplot2` – Advanced visualization
+- `patchwork` – Multi-panel figure assembly
+- `tidyverse` – Data manipulation and visualization
+
 ---
 
-## Build Instructions
+## Build & Access Instructions
 
-To build this course website locally, follow these steps:
+### **View the Course Online**
+👉 **[https://dqbm-cccz.github.io/publication_ready_figs_R/](https://dqbm-cccz.github.io/publication_ready_figs_R/)**
 
-1. **Install Quarto:** If you don't have Quarto installed, follow the instructions on the [Quarto website](https://quarto.org/docs/get-started/).
+Access slides, exercises, and all course materials from the website.
+
+### **Build Locally**
+
+1. **Install Quarto:**
+   - Follow the instructions on the [Quarto website](https://quarto.org/docs/get-started/)
 
 2. **Clone the repository:**
    ```bash
@@ -133,24 +201,33 @@ To build this course website locally, follow these steps:
    cd publication_ready_figs_R
    ```
 
-3. **Restore the R environment** (optional, but recommended):
+3. **Restore the R environment** (highly recommended):
    ```r
    renv::restore()
    ```
 
-4. **Render the website:** Open the project in RStudio and run the following command in the R console, or execute it in your terminal:
+4. **Render the website:**
    ```bash
    quarto render
    ```
-   This will generate the `docs/` directory containing the static website.
+   This generates the `docs/` directory with the complete website.
 
-5. **Preview the website:** Open `docs/index.html` in your web browser to view the local build.
+5. **Preview locally:**
+   - Open `docs/index.html` in your web browser
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for details.
+Contributions are welcome! Whether you're:
+- Fixing bugs or typos
+- Suggesting improvements to exercises
+- Proposing new content
+- Sharing resources
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
 
 ## License
 
@@ -158,6 +235,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Visit the course website: [https://dqbm-cccz.github.io/publication_ready_figs_R/](https://dqbm-cccz.github.io/publication_ready_figs_R/)
+## Acknowledgements
 
-Access slides, exercises, and resources there.
+This course website is inspired by the [SIB course template](https://github.com/sib-swiss/course_website_template).
+
+**Course Delivery:** 2025  
+**Instructor:** Deepak Tanwar  
+**Institution:** Comprehensive Cancer Center Zurich (CCCZ)  
+**Copyright © 2025**
