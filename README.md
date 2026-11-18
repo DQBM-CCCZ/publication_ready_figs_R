@@ -65,36 +65,40 @@ Designed for researchers at the Comprehensive Cancer Center Zurich (CCCZ), Unive
 
 ## Course Schedule
 
-### **Morning (Half-Day 1) — 09:00–12:00**
+### **Half-Day 1 — 13:00–17:00**
 
 | Time | Session | Topics | Exercises |
 |------|---------|--------|-----------|
-| 09:00–09:15 | Welcome | Introductions, course overview, visualization principles | — |
-| 09:15–10:15 | **Block 1:** Visualization Principles | Why figures matter, clarity vs. complexity, common mistakes, effective storytelling | [Ex 1](exercises/exercise_block_1.qmd) |
-| 10:15–10:30 | *Break* | ☕ Coffee break | — |
-| 10:30–11:15 | **Block 2:** Base R Graphics | `plot()`, `barplot()`, `hist()`, customization basics, legends & labels | [Ex 2](exercises/exercise_block_2.qmd) |
-| 11:15–12:00 | **Block 3:** ggplot2 Fundamentals | Layers, aesthetics, `geoms`, basic plots, understanding the grammar of graphics | [Ex 3](exercises/exercise_block_3.qmd) |
+| 13:00–13:15 | Welcome | Introductions, course overview, visualization principles | — |
+| 13:15–14:15 | **Block 1:** Visualization Principles | Why figures matter, clarity vs. complexity, common mistakes, effective storytelling | [Ex 1](exercises/exercise_block_1.qmd) |
+| 14:15–14:30 | *Break* | ☕ Coffee break | — |
+| 14:30–15:15 | **Block 2:** Base R Graphics | `plot()`, `barplot()`, `hist()`, customization basics, legends & labels | [Ex 2](exercises/exercise_block_2.qmd) |
+| 15:15–16:00 | **Block 3:** ggplot2 Fundamentals | Layers, aesthetics, `geoms`, basic plots, understanding the grammar of graphics | [Ex 3](exercises/exercise_block_3.qmd) |
+| 16:00–16:15 | *Break* | ☕ Coffee break | — |
+| 16:15–17:00 | **Block 4:** Styling & Themes | Scales, themes, annotations, legends, color palettes, visual hierarchy | [Ex 4](exercises/exercise_block_4.qmd) |
 
-**What You'll Learn (Morning):**
+**What You'll Learn (Day 1):**
 - Core visualization principles for scientific communication
 - Introduction to base R and ggplot2 syntax
+- Professional styling and design principles
 - Creating your first publication-ready plots
 
 ---
 
-### **Afternoon (Half-Day 2) — 13:00–17:00**
+### **Half-Day 2 — 13:00–17:00**
 
 | Time | Session | Topics | Exercises |
 |------|---------|--------|-----------|
-| 13:00–14:00 | **Block 4:** Styling & Themes | Scales, themes, annotations, legends, color palettes, visual hierarchy | [Ex 4](exercises/exercise_block_4.qmd) |
-| 14:00–14:15 | *Break* | ☕ Coffee break | — |
-| 14:15–15:15 | **Block 5:** Publication Standards | Figure formats, resolution, dimensions, DPI, journal requirements, exporting with `ggsave()` | [Ex 5](exercises/exercise_block_5.qmd) |
-| 15:15–16:00 | **Block 6:** Multi-panel Figures | `patchwork`, layout design, alignment, combined plots with shared legends | [Ex 6](exercises/exercise_block_6.qmd) |
+| 13:00–13:15 | Recap & Agenda | Day 1 recap, Day 2 overview | — |
+| 13:15–14:15 | **Block 5:** Publication Standards | Figure formats, resolution, dimensions, DPI, journal requirements, exporting with `ggsave()` | [Ex 5](exercises/exercise_block_5.qmd) |
+| 14:15–14:30 | *Break* | ☕ Coffee break | — |
+| 14:30–15:15 | **Block 6:** Multi-panel Figures | `patchwork`, layout design, alignment, combined plots with shared legends | [Ex 6](exercises/exercise_block_6.qmd) |
+| 15:15–16:00 | **Block 7:** Advanced Topics | Advanced techniques (faceting, statistical overlays, interactive elements) | [Ex 7](exercises/exercise_block_7.qmd) |
 | 16:00–16:15 | *Break* | ☕ Final break | — |
-| 16:15–17:00 | **Block 7** + **Final Project** | Advanced topics (faceting, statistical overlays), create publication-ready figures from provided data | [Ex 7](exercises/exercise_block_7.qmd) |
+| 16:15–17:00 | **Final Project** | Create publication-ready figure(s) from provided data | — |
 
-**What You'll Learn (Afternoon):**
-- Professional styling and publication-compliant formatting
+**What You'll Learn (Day 2):**
+- Publication-compliant figure formatting and export
 - Multi-panel figure assembly with patchwork
 - Advanced visualization techniques
 - Complete workflow for publication-ready figures
