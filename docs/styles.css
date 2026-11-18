@@ -21,6 +21,11 @@
   background-color: var(--git-orange) !important;
 }
 
+.navbar-container,
+.navbar-brand-container {
+  background-color: var(--git-orange) !important;
+}
+
 .navbar-nav .nav-link, .navbar-brand {
   color: #FFFFFF !important;
 }
