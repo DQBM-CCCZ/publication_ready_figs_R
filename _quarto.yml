@@ -3,11 +3,14 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
-    - "!*.Rmd"
+    - "qmd/*.qmd"
+    - "slides/*.qmd"
+    - "exercises/*.qmd"
     - "!assets/**"
 
 resources:
   - "assets/**"
+
 website:
   title: "Publication-Ready Figure Generation in R"
   navbar:
@@ -15,25 +18,25 @@ website:
       - href: index.qmd
         text: Home
       - href: qmd/precourse_preparation.qmd
-        text: Pre-course preparation
+        text: Pre-course Setup
       - href: qmd/schedule.qmd
         text: Schedule
       - text: Slides
         menu:
           - href: slides/slide_block_1.qmd
-            text: "Block 1"
+            text: "Block 1: Visualization Principles"
           - href: slides/slide_block_2.qmd
-            text: "Block 2"
+            text: "Block 2: Base R Graphics"
           - href: slides/slide_block_3.qmd
-            text: "Block 3"
+            text: "Block 3: ggplot2 Fundamentals"
           - href: slides/slide_block_4.qmd
-            text: "Block 4"
+            text: "Block 4: Styling & Themes"
           - href: slides/slide_block_5.qmd
-            text: "Block 5"
+            text: "Block 5: Publication Standards"
           - href: slides/slide_block_6.qmd
-            text: "Block 6"
+            text: "Block 6: Multi-panel Figures"
           - href: slides/slide_block_7.qmd
-            text: "Block 7"
+            text: "Block 7: Advanced Topics"
       - text: Exercises
         menu:
           - href: exercises/exercise_block_1.qmd
@@ -52,7 +55,8 @@ website:
             text: "Block 7"
     right:
       - icon: github
-        href: https://github.com/DQBM-SIB/publication_ready_figs_R
+        href: https://github.com/DQBM-CCCZ/publication_ready_figs_R
+
   page-footer:
     left: "This course website is inspired by the [SIB course template](https://github.com/sib-swiss/course_website_template)."
     right: "Copyright 2025, Deepak Tanwar"
@@ -64,5 +68,5 @@ format:
       dark: darkly
     css: styles.css
     toc: true
-    code-block-height: 500px
+    highlight-style: monokai
 
