@@ -72,6 +72,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -362,22 +365,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#teacher-author" id="toc-teacher-author" class="nav-link active" data-scroll-target="#teacher-author">Teacher &amp; Author</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#teacher-author" id="toc-teacher-author" class="nav-link" data-scroll-target="#teacher-author">Teacher &amp; Author</a></li>
+  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link" data-scroll-target="#about-this-course">About This Course</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a>
   <ul class="collapse">
-  <li><a href="#block-1-introduction-to-data-visualization" id="toc-block-1-introduction-to-data-visualization" class="nav-link" data-scroll-target="#block-1-introduction-to-data-visualization">Block 1: Introduction to Data Visualization</a></li>
-  <li><a href="#block-2-3-mastering-ggplot2" id="toc-block-2-3-mastering-ggplot2" class="nav-link" data-scroll-target="#block-2-3-mastering-ggplot2">Block 2 &amp; 3: Mastering <code>ggplot2</code></a></li>
-  <li><a href="#block-4-statistical-annotations" id="toc-block-4-statistical-annotations" class="nav-link" data-scroll-target="#block-4-statistical-annotations">Block 4: Statistical Annotations</a></li>
-  <li><a href="#block-5-composition-of-figures-and-tables" id="toc-block-5-composition-of-figures-and-tables" class="nav-link" data-scroll-target="#block-5-composition-of-figures-and-tables">Block 5: Composition of Figures and Tables</a></li>
-  <li><a href="#block-6-complex-heatmaps-and-cross-system-plot-composition" id="toc-block-6-complex-heatmaps-and-cross-system-plot-composition" class="nav-link" data-scroll-target="#block-6-complex-heatmaps-and-cross-system-plot-composition">Block 6: Complex Heatmaps and Cross-System Plot Composition</a></li>
-  <li><a href="#block-7-finalizing-figures-reproducibility" id="toc-block-7-finalizing-figures-reproducibility" class="nav-link" data-scroll-target="#block-7-finalizing-figures-reproducibility">Block 7: Finalizing Figures &amp; Reproducibility</a></li>
+  <li><a href="#block-1-visualization-principles" id="toc-block-1-visualization-principles" class="nav-link" data-scroll-target="#block-1-visualization-principles">Block 1 — Visualization Principles</a></li>
+  <li><a href="#block-2-base-r-graphics" id="toc-block-2-base-r-graphics" class="nav-link" data-scroll-target="#block-2-base-r-graphics">Block 2 — Base R Graphics</a></li>
+  <li><a href="#block-3-ggplot2-fundamentals" id="toc-block-3-ggplot2-fundamentals" class="nav-link" data-scroll-target="#block-3-ggplot2-fundamentals">Block 3 — ggplot2 Fundamentals</a></li>
+  <li><a href="#block-4-styling-themes" id="toc-block-4-styling-themes" class="nav-link" data-scroll-target="#block-4-styling-themes">Block 4 — Styling &amp; Themes</a></li>
+  <li><a href="#block-5-publication-standards" id="toc-block-5-publication-standards" class="nav-link" data-scroll-target="#block-5-publication-standards">Block 5 — Publication Standards</a></li>
+  <li><a href="#block-6-multi-panel-figures" id="toc-block-6-multi-panel-figures" class="nav-link" data-scroll-target="#block-6-multi-panel-figures">Block 6 — Multi-panel Figures</a></li>
+  <li><a href="#block-7-advanced-topics" id="toc-block-7-advanced-topics" class="nav-link" data-scroll-target="#block-7-advanced-topics">Block 7 — Advanced Topics</a></li>
   </ul></li>
-  <li><a href="#learning-experiences" id="toc-learning-experiences" class="nav-link" data-scroll-target="#learning-experiences">Learning experiences</a>
-  <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
-  </ul></li>
+  <li><a href="#course-roadmap" id="toc-course-roadmap" class="nav-link" data-scroll-target="#course-roadmap">Course Roadmap</a></li>
+  <li><a href="#learning-experiences" id="toc-learning-experiences" class="nav-link" data-scroll-target="#learning-experiences">Learning Experiences</a></li>
+  <li><a href="#course-format" id="toc-course-format" class="nav-link" data-scroll-target="#course-format">Course Format</a></li>
+  <li><a href="#quick-links" id="toc-quick-links" class="nav-link" data-scroll-target="#quick-links">Quick Links</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
   </ul>
 </nav>
     </div>
@@ -404,10 +410,213 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the course website for Publication-Ready Figure Generation in R.</p>
+<p>Welcome to the course website for <strong>Publication-Ready Figure Generation in R</strong>.</p>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="assets/images/krauthammer.jpg" class="img-fluid" width="150"></td>
+<td><img src="assets/images/cccz.jpg" class="img-fluid" width="350"></td>
+</tr>
+<tr class="even">
+<td>We thank <a href="https://krauthammerlab.ch/authors/michaelkrauthammer/">Prof.&nbsp;Michael Krauthammer</a> for supporting this course.</td>
+<td>Special thanks to <strong>CCCZ</strong> — Dr.&nbsp;Maja Zenz and Ms.&nbsp;Silke Uflacker — for providing coffee breaks.</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="teacher-author" class="level2">
 <h2 class="anchored" data-anchor-id="teacher-author">Teacher &amp; Author</h2>
-<p>Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989" target="_blank"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"></a></p>
+<p>Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989" target="_blank"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"></a><br> Bioinformatics Specialist and Trainer<br> Swiss Institute of Bioinformatics (SIB) / University of Zurich (UZH) / University Hospital Zurich (USZ) / Comprehensive Cancer Center Zurich (CCCZ)<br> <a href="mailto:deepak.tanwar@uzh.ch">deepak.tanwar@uzh.ch</a><br> <a href="http://dktanwar.bsky.social/">Bluesky</a></p>
+</section>
+<section id="about-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="about-this-course">About This Course</h2>
+<p>This is a hands-on 2 half-day workshop (13:00–17:00 each day) for researchers who want to create publication-ready figures in R. By the end of the course you will understand visualization principles, master both base R and ggplot2 graphics, and produce high-quality figures ready for journal submission.</p>
+<p>No prior experience with ggplot2 is required, but basic R programming skills are essential. See <a href="./qmd/precourse_preparation.html">Pre-course Setup</a> for prerequisites.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<section id="block-1-visualization-principles" class="level3">
+<h3 class="anchored" data-anchor-id="block-1-visualization-principles">Block 1 — Visualization Principles</h3>
+<ul>
+<li><strong>Analyze the principles of effective data visualization:</strong>
+<ul>
+<li><strong>Explain</strong> the importance of clarity, accuracy, and aesthetics in creating publication-ready figures</li>
+<li><strong>Identify</strong> common pitfalls in data visualization and how to avoid them</li>
+<li><strong>Apply</strong> best practices for visual communication in science</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-2-base-r-graphics" class="level3">
+<h3 class="anchored" data-anchor-id="block-2-base-r-graphics">Block 2 — Base R Graphics</h3>
+<ul>
+<li><strong>Apply base R graphics for figure creation:</strong>
+<ul>
+<li><strong>Create</strong> basic plots (e.g., scatterplots, bar charts, histograms) using <code>plot()</code>, <code>barplot()</code>, <code>hist()</code></li>
+<li><strong>Customize</strong> plots with titles, labels, legends, and color schemes</li>
+<li><strong>Understand</strong> when to use base R vs.&nbsp;ggplot2</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-3-ggplot2-fundamentals" class="level3">
+<h3 class="anchored" data-anchor-id="block-3-ggplot2-fundamentals">Block 3 — ggplot2 Fundamentals</h3>
+<ul>
+<li><strong>Construct advanced visualizations using ggplot2:</strong>
+<ul>
+<li><strong>Build</strong> complex and layered visualizations using the grammar of graphics</li>
+<li><strong>Apply</strong> <code>geoms</code>, <code>aesthetics</code>, and <code>scales</code> to create polished figures</li>
+<li><strong>Create</strong> reproducible and reusable plotting code</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-4-styling-themes" class="level3">
+<h3 class="anchored" data-anchor-id="block-4-styling-themes">Block 4 — Styling &amp; Themes</h3>
+<ul>
+<li><strong>Master figure styling and visual design:</strong>
+<ul>
+<li><strong>Apply</strong> themes, color palettes, and annotations effectively</li>
+<li><strong>Customize</strong> legends, axis labels, and overall visual hierarchy</li>
+<li><strong>Create</strong> consistent styling across multiple plots</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-5-publication-standards" class="level3">
+<h3 class="anchored" data-anchor-id="block-5-publication-standards">Block 5 — Publication Standards</h3>
+<ul>
+<li><strong>Adapt figures for publication requirements:</strong>
+<ul>
+<li><strong>Adjust</strong> figure dimensions, resolutions, and formats (PDF, PNG, TIFF)</li>
+<li><strong>Export</strong> publication-quality figures with correct DPI and dimensions</li>
+<li><strong>Meet</strong> specific journal technical requirements</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-6-multi-panel-figures" class="level3">
+<h3 class="anchored" data-anchor-id="block-6-multi-panel-figures">Block 6 — Multi-panel Figures</h3>
+<ul>
+<li><strong>Assemble complex multi-panel figures:</strong>
+<ul>
+<li><strong>Combine</strong> multiple plots using <code>patchwork</code></li>
+<li><strong>Design</strong> effective layouts with proper alignment</li>
+<li><strong>Create</strong> figures with shared legends and consistent styling</li>
+</ul></li>
+</ul>
+</section>
+<section id="block-7-advanced-topics" class="level3">
+<h3 class="anchored" data-anchor-id="block-7-advanced-topics">Block 7 — Advanced Topics</h3>
+<ul>
+<li><strong>Implement advanced visualization techniques:</strong>
+<ul>
+<li><strong>Add</strong> statistical summaries and confidence intervals</li>
+<li><strong>Apply</strong> faceting for multi-faceted data display</li>
+<li><strong>Annotate</strong> plots with p-values and statistical information</li>
+<li><strong>Produce</strong> high-quality, reproducible figures from start to finish</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="course-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="course-roadmap">Course Roadmap</h2>
+<p>Here’s how everything fits together:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A["🎓 Start: Welcome"] --&gt; B["Block 1: Visualization Principles"]
+    
+    B --&gt; E1["📝 Exercise 1"]
+    
+    E1 --&gt; C["Block 2: Base R Graphics"]
+    
+    C --&gt; E2["📝 Exercise 2"]
+    
+    E2 --&gt; D["Block 3: ggplot2 Fundamentals"]
+    
+    D --&gt; E3["📝 Exercise 3"]
+    
+    E3 --&gt; E["Block 4: Styling &amp; Themes"]
+    
+    E --&gt; E4["📝 Exercise 4"]
+    
+    E4 --&gt; DAY1["✅ Half-Day 1 Complete"]
+    
+    DAY1 --&gt; F["Block 5: Publication Standards"]
+    
+    F --&gt; E5["📝 Exercise 5"]
+    
+    E5 --&gt; G["Block 6: Multi-panel Figures"]
+    
+    G --&gt; E6["📝 Exercise 6"]
+    
+    E6 --&gt; H["Block 7: Advanced Topics"]
+    
+    H --&gt; E7["📝 Exercise 7"]
+    
+    E7 --&gt; I["🏁 Final Project"]
+    
+    I --&gt; J["✅ Course Complete"]
+    
+    style A fill:#e1f5ff
+    style B fill:#f3e5f5
+    style C fill:#e8f5e9
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style DAY1 fill:#e0f2f1
+    style F fill:#f3e5f5
+    style G fill:#e8f5e9
+    style H fill:#fff3e0
+    style I fill:#f1f8e9
+    style J fill:#c8e6c9
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-experiences" class="level2">
+<h2 class="anchored" data-anchor-id="learning-experiences">Learning Experiences</h2>
+<p>To reach these objectives we combine concept explanations, live demonstrations, and hands-on exercises. During exercises you are welcome to discuss with other participants. All exercise steps include expected output so you can check your progress.</p>
+<p>Each block has practical work. All answers to the exercises are provided, but try the exercise first by yourself before checking solutions.</p>
+</section>
+<section id="course-format" class="level2">
+<h2 class="anchored" data-anchor-id="course-format">Course Format</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Format</strong></td>
+<td>2 half-day intensive workshop</td>
+</tr>
+<tr class="even">
+<td><strong>Duration</strong></td>
+<td>4 hours per half-day (8 hours total)</td>
+</tr>
+<tr class="odd">
+<td><strong>Timing</strong></td>
+<td>Each day: 13:00–17:00</td>
+</tr>
+<tr class="even">
+<td><strong>Audience</strong></td>
+<td>Researchers with basic R skills</td>
+</tr>
+<tr class="odd">
+<td><strong>Prerequisites</strong></td>
+<td>See <a href="./qmd/precourse_preparation.html">Pre-course Setup</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quick-links" class="level2">
+<h2 class="anchored" data-anchor-id="quick-links">Quick Links</h2>
+<ul>
+<li>📖 <strong><a href="./qmd/precourse_preparation.html">Pre-course Setup</a></strong> – Installation and skill assessment</li>
+<li>📅 <strong><a href="./qmd/schedule.html">Schedule</a></strong> – Detailed course schedule</li>
+<li>🎓 <strong><a href="#">Slides</a></strong> – View all presentation slides</li>
+<li>📝 <strong><a href="#">Exercises</a></strong> – Access exercises for each block</li>
+</ul>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
@@ -416,89 +625,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="copyright" class="level2">
 <h2 class="anchored" data-anchor-id="copyright">Copyright</h2>
 <p>Copyright 2025, Deepak Tanwar</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<section id="block-1-introduction-to-data-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="block-1-introduction-to-data-visualization">Block 1: Introduction to Data Visualization</h3>
-<ul>
-<li><strong>Analyze the principles of effective data visualization:</strong>
-<ul>
-<li><strong>Explain</strong> the importance of clarity, accuracy, and aesthetics in creating publication-ready figures.</li>
-<li><strong>Identify</strong> common pitfalls in data visualization and how to avoid them.</li>
-</ul></li>
-<li><strong>Apply base R graphics for figure creation:</strong>
-<ul>
-<li><strong>Create</strong> basic plots (e.g., scatterplots, bar charts) using base R functions.</li>
-<li><strong>Customize</strong> plots with titles, labels, and legends.</li>
-</ul></li>
-</ul>
-</section>
-<section id="block-2-3-mastering-ggplot2" class="level3">
-<h3 class="anchored" data-anchor-id="block-2-3-mastering-ggplot2">Block 2 &amp; 3: Mastering <code>ggplot2</code></h3>
-<ul>
-<li><strong>Construct advanced visualizations using ggplot2:</strong>
-<ul>
-<li><strong>Build</strong> complex and layered visualizations using the <code>ggplot2</code> package.</li>
-<li><strong>Develop</strong> and <strong>apply</strong> custom themes for consistent styling across multiple plots.</li>
-</ul></li>
-</ul>
-</section>
-<section id="block-4-statistical-annotations" class="level3">
-<h3 class="anchored" data-anchor-id="block-4-statistical-annotations">Block 4: Statistical Annotations</h3>
-<ul>
-<li><strong>Integrate statistical annotations and summaries:</strong>
-<ul>
-<li><strong>Add</strong> statistical summaries (e.g., regression lines, confidence intervals) to figures.</li>
-<li><strong>Annotate</strong> plots with p-values and correlation coefficients.</li>
-</ul></li>
-</ul>
-</section>
-<section id="block-5-composition-of-figures-and-tables" class="level3">
-<h3 class="anchored" data-anchor-id="block-5-composition-of-figures-and-tables">Block 5: Composition of Figures and Tables</h3>
-<ul>
-<li><strong>Assemble complex figures from multiple components:</strong>
-<ul>
-<li><strong>Construct</strong> and <strong>style</strong> publication-ready tables using the <code>gt</code> package.</li>
-<li><strong>Combine</strong> multiple <code>ggplot2</code> plots, and <code>gt</code> tables, into a single, cohesive layout using <code>patchwork</code>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="block-6-complex-heatmaps-and-cross-system-plot-composition" class="level3">
-<h3 class="anchored" data-anchor-id="block-6-complex-heatmaps-and-cross-system-plot-composition">Block 6: Complex Heatmaps and Cross-System Plot Composition</h3>
-<ul>
-<li><strong>Create and combine figures from different graphics systems:</strong>
-<ul>
-<li><strong>Construct</strong> complex, annotated heatmaps using the <code>ComplexHeatmap</code> package.</li>
-<li><strong>Combine</strong> plots from different systems (e.g., <code>ComplexHeatmap</code> and <code>ggplot2</code>) into a cohesive figure using <code>grid</code> graphics.</li>
-</ul></li>
-</ul>
-</section>
-<section id="block-7-finalizing-figures-reproducibility" class="level3">
-<h3 class="anchored" data-anchor-id="block-7-finalizing-figures-reproducibility">Block 7: Finalizing Figures &amp; Reproducibility</h3>
-<ul>
-<li><strong>Produce and export publication-quality figures:</strong>
-<ul>
-<li><strong>Adapt</strong> stylistic elements like fonts and line weights to meet publication guidelines.</li>
-<li><strong>Generate</strong> high-resolution figures in various formats (PDF, PNG, TIFF) using functions like <code>ggsave()</code>.</li>
-</ul></li>
-<li><strong>Implement best practices for reproducibility:</strong>
-<ul>
-<li><strong>Write</strong> clean and reusable R scripts for figure generation.</li>
-<li><strong>Document</strong> code and workflows to ensure reproducibility and transparency.</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="learning-experiences" class="level2">
-<h2 class="anchored" data-anchor-id="learning-experiences">Learning experiences</h2>
-<p>To reach the learning outcomes we will use lectures, exercises, and polls. During exercises, you are free to discuss with other participants. During lectures, focus on the lecture only.</p>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<p>Each block has practical work involved. Some more than others. The practicals are subdivided into chapters, and we’ll have a (short) discussion after each chapter. All answers to the practicals are incorporated, but they are hidden. Do the exercise first by yourself, before checking out the answer. If your answer is different from the answer in the practicals, try to figure out why they are different.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
