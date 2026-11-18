@@ -3,14 +3,31 @@ title: "Schedule"
 format: html
 ---
 
-## Course Schedule
+::: {.callout-note}
+**Note:** This is a 2 half-day workshop. Each half-day runs 13:00–17:00 with coffee breaks included.
+:::
 
-| block | date        | presentation                          | exercise                                      | video                                 |
-|-------|-------------|---------------------------------------|-----------------------------------------------|---------------------------------------|
-| 1     | 13 Oct 2025 | [Slides](../slides/slide_block_1.qmd) | [Exercise](../exercises/exercise_block_1.qmd) | [Video](https://youtu.be/DGqqOKO3ugE) |
-| 2     | 20 Oct 2025 | [Slides](../slides/slide_block_2.qmd) | [Exercise](../exercises/exercise_block_2.qmd) | [Video](https://youtu.be/K_C5rjg_K90) |                                       |
-| 3     | 27 Oct 2025 | [Slides](../slides/slide_block_3.qmd) | [Exercise](../exercises/exercise_block_3.qmd) | [Video](https://youtu.be/dVMvrowTU08) |
-| 4     | 03 Nov 2025 | [Slides](../slides/slide_block_4.qmd) | [Exercise](../exercises/exercise_block_4.qmd) | [Video](https://youtu.be/0AwixX2OSQY) |
-| 5     | 10 Nov 2025 | [Slides](../slides/slide_block_5.qmd) | [Exercise](../exercises/exercise_block_5.qmd) | [Video]() |
-| 6     | 17 Nov 2025 | [Slides](../slides/slide_block_6.qmd) | [Exercise](../exercises/exercise_block_6.qmd) | [Video]() |
-| 7     | 24 Nov 2025 | [Slides](../slides/slide_block_7.qmd) | [Exercise](../exercises/exercise_block_7.qmd) | [Video]() |
+## Half-Day 1 (13:00–17:00)
+
+| Time | Module | Topics | Slides | Exercise |
+|------|--------|--------|--------|----------|
+| 13:00–13:15 | Welcome | Introductions, course overview, visualization principles | — | — |
+| 13:15–14:15 | [Module 1: Visualization Principles](../slides/slide_block_1.qmd) | Why figures matter, clarity vs. complexity, common mistakes, visual communication | [Slides](../slides/slide_block_1.qmd) | [Exercise](../exercises/exercise_block_1.qmd) |
+| 14:15–14:30 | *Coffee Break* | | | |
+| 14:30–15:15 | [Module 2: Base R Graphics](../slides/slide_block_2.qmd) | `plot()`, `barplot()`, `hist()`, customization basics, legends & labels | [Slides](../slides/slide_block_2.qmd) | [Exercise](../exercises/exercise_block_2.qmd) |
+| 15:15–16:00 | [Module 3: ggplot2 Fundamentals](../slides/slide_block_3.qmd) | Layers, aesthetics, `geoms`, basic plots, grammar of graphics | [Slides](../slides/slide_block_3.qmd) | [Exercise](../exercises/exercise_block_3.qmd) |
+| 16:00–16:15 | *Coffee Break* | | | |
+| 16:15–17:00 | [Module 4: Styling & Themes](../slides/slide_block_4.qmd) | Scales, themes, annotations, legends, color palettes, visual hierarchy | [Slides](../slides/slide_block_4.qmd) | [Exercise](../exercises/exercise_block_4.qmd) |
+
+## Half-Day 2 (13:00–17:00)
+
+| Time | Module | Topics | Slides | Exercise |
+|------|--------|--------|--------|----------|
+| 13:00–13:15 | Recap & Agenda | Day 1 review, Day 2 overview | — | — |
+| 13:15–14:15 | [Module 5: Publication Standards](../slides/slide_block_5.qmd) | Figure formats, resolution, dimensions, DPI, journal requirements, `ggsave()` | [Slides](../slides/slide_block_5.qmd) | [Exercise](../exercises/exercise_block_5.qmd) |
+| 14:15–14:30 | *Coffee Break* | | | |
+| 14:30–15:15 | [Module 6: Multi-panel Figures](../slides/slide_block_6.qmd) | `patchwork`, layout design, alignment, combined plots, shared legends | [Slides](../slides/slide_block_6.qmd) | [Exercise](../exercises/exercise_block_6.qmd) |
+| 15:15–16:00 | [Module 7: Advanced Topics](../slides/slide_block_7.qmd) | Faceting, statistical overlays, annotations, final tips | [Slides](../slides/slide_block_7.qmd) | [Exercise](../exercises/exercise_block_7.qmd) |
+| 16:00–16:15 | *Coffee Break* | | | |
+| 16:15–17:00 | Final Project | Create publication-ready figure(s) from provided data | — | [Project](../exercises/exercise_block_7.qmd) |
+| 17:00–17:15 | Wrap-up | Q&A, feedback, certificate, next steps | — | — |
